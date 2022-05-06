@@ -1,6 +1,7 @@
-BOT_TOKEN = "YOUR_BOT_TOKEN"
-WEBHOOK_HOST = "your_domain.com"
-WEBHOOK_PATH = "/web_app_example"
+BOT_TOKEN = "5371616713:AAFc6N1QE57XNO9nb8WbQdag6FEz8z5a4XI"
+APPNAME = "hdmovie"
+WEBHOOK_HOST = "https://" + APPNAME + ".herokuapp.com/"
+WEBHOOK_PATH = "/home"
 WEBHOOK_URL = f"{WEBHOOK_HOST}{WEBHOOK_PATH}"
 WEBAPP_HOST = "0.0.0.0"
 WEBAPP_PORT = 8000
