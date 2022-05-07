@@ -1,6 +1,6 @@
 from flask import Flask, request, abort, send_file
 from telebot import TeleBot, types
-
+import os
 import config
 from utils import parse_init_data
 
