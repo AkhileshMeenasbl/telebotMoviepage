@@ -13,7 +13,7 @@ app = Flask(__name__)
 def cmd_start(m):
   bot.send_message(m.chat.id,text="akhil")
 
-@app.route('/' + config.BOT_TOKEN, methods=['POST'])
+@app.route('/' + TOKEN, methods=['POST'])
 def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
     return "!", 200
@@ -21,7 +21,7 @@ def getMessage():
 @app.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://' + config.APPNAME + '.herokuapp.com/' + f"{config.BOT_TOKEN}")
+    bot.set_webhook(url=f"https://hdmovie5.herokuapp.com/{TOKEN}")
     return "!", 200
  
 if __name__ == "__main__":
