@@ -67,12 +67,16 @@ def ordered(message: types.Message):
     bot.reply_to(message, '<b>Thank you for your order!</b>\n(It will not be delivered)')
 
 
-def main():
-    bot.delete_webhook()
-    bot.set_webhook(config.WEBHOOK_URL)
-
-    app.run(host=config.WEBAPP_HOST, port=config.WEBAPP_PORT)
-
-
+@app.route('/' + config.BOT_TOKEN, methods=['POST'])
+def getMessage():
+    bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
+    return "!", 200
+ 
+@app.route("/")
+def webhook():
+    bot.remove_webhook()
+    bot.set_webhook(url='https://' + config.APPNAME + '.herokuapp.com/' + f"{config.BOT_TOKEN}")
+    return "!", 200
+ 
 if __name__ == "__main__":
-    main()
+    app.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
