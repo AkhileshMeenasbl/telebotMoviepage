@@ -8,19 +8,7 @@ from utils import parse_init_data
 TOKEN = config.BOT_TOKEN
 bot = TeleBot(token=TOKEN, parse_mode="HTML")
 app = Flask(__name__, static_url_path='/static')
- 
- 
-@app.post(config.WEBHOOK_PATH)
-def process_webhook_post():
-    if request.headers.get('content-type') == 'application/json':
-        json_string = request.get_data().decode('utf-8')
-        update = types.Update.de_json(json_string)
-        bot.process_new_updates([update])
-        return ''
-    else:
-        abort(403)
- 
- 
+
 @app.get('/')
 def index():
     return send_file('static/index.html')
@@ -50,6 +38,10 @@ def submit_order():
  
  
 @bot.message_handler(commands=['start'])
+def ak(m):
+  bot.send_message(m.chat.id,text="d9ne")
+  
+@bot.message_handler(commands=['test'])
 def cmd_start(message: types.Message):
     markup = types.InlineKeyboardMarkup(
         keyboard=[
