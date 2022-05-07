@@ -46,6 +46,10 @@ def submit_order():
     bot.answer_web_app_query(query_id, result)
     return ''
 
+@bot.message_handler(commands=['test'])
+def cmd_start(m):
+  bot.send_message(m.chat.id,text="akhil")
+
 
 @bot.message_handler(commands=['start'])
 def cmd_start(message: types.Message):
