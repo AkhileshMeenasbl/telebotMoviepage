@@ -7,7 +7,7 @@ from utils import parse_init_data
 
 TOKEN = config.BOT_TOKEN
 bot = TeleBot(token=TOKEN)
-server = Flask(__name__)
+app = Flask(__name__)
 
 @bot.message_handler(commands=['test'])
 def cmd_start(m):
