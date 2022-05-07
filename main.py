@@ -6,7 +6,7 @@ import config
 from utils import parse_init_data
 
 TOKEN = config.BOT_TOKEN
-bot = telebot.TeleBot(token=TOKEN)
+bot = TeleBot(token=TOKEN)
 server = Flask(__name__)
 
 @bot.message_handler(commands=['test'])
