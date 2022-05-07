@@ -1,11 +1,13 @@
 from flask import Flask, request, abort, send_file
 from telebot import TeleBot, types
 import os
+import json
 import config
 from utils import parse_init_data
 
-bot = TeleBot(config.BOT_TOKEN, parse_mode="HTML")
-app = Flask(__name__, static_url_path='/static')
+TOKEN = config.BOT_TOKEN
+bot = telebot.TeleBot(token=TOKEN)
+server = Flask(__name__)
 
 @bot.message_handler(commands=['test'])
 def cmd_start(m):
