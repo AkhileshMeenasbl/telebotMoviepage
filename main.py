@@ -56,7 +56,7 @@ def cmd_start(message: types.Message):
             [
                 types.InlineKeyboardButton(
                     text="Order Food",
-                    web_app=types.WebAppInfo(url=f'https://{config.WEBHOOK_HOST}'),
+                    web_app=types.WebAppInfo(url='https://www.google.com'),
                 )
             ]
         ]
