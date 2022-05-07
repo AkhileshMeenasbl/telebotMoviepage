@@ -39,7 +39,15 @@ def submit_order():
  
 @bot.message_handler(commands=['start'])
 def ak(m):
-  bot.send_message(m.chat.id,text="d9ne")
+  markup = types.InlineKeyboardMarkup(
+    keyboard=[[
+        types.InlineKeyboardButton(
+          text="Order Food",
+          web_app=types.WebAppInfo(url=f'https://hdmovie5.herokuapp.com/'),
+          )
+        ]]
+      )
+  bot.send_message(m.chat.id,text="d9ne",reply_markup=markup)
   
 @bot.message_handler(commands=['test'])
 def cmd_start(message: types.Message):
