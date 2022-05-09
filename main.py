@@ -15,6 +15,11 @@ app = Flask(__name__, static_url_path='/static')
 def ak(m):
   bot.send_message(m.chat.id,text=GeneralTxt.Welcomemsg.format(m.chat.first_name),reply_markup=Buttons.HOME_PAGE)
 
+@app.route('/' + "home", methods=['POST'])
+def index():
+  return send_file('static/index.html')
+
+
 @app.route('/' + TOKEN, methods=['POST'])
 def getMessage():
     bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
