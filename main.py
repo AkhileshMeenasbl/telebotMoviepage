@@ -15,7 +15,7 @@ app = Flask(__name__, static_url_path='/static')
 def ak(m):
   bot.send_message(m.chat.id,text=GeneralTxt.Welcomemsg.format(m.chat.first_name),reply_markup=Buttons.HOME_PAGE)
 
-@app.route('/home')
+@app.route('/home',methods=['POST','GET'])
 def index():
   return send_file('static/index.html')
 
