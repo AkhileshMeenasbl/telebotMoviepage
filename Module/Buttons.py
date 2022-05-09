@@ -1,8 +1,10 @@
 import telebot
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton, WebAppInfo
 
-BUTTON1 = InlineKeyboardButton(text="y1",web_app=WebAppInfo(url=f'https://hdmovie5.herokuapp.com/'))
-CoolFonts = InlineKeyboardButton(text='Cool Fonts',callback_data='CoolFonts')
+Movie = InlineKeyboardButton(text="🔍 Movie App",web_app=WebAppInfo(url=f'https://hdmovie5.herokuapp.com/'))
+Help = InlineKeyboardButton(text="💡 Help",callback_data='CoolFonts')
+About = InlineKeyboardButton(text='About ⚠️',callback_data='CoolFonts')
+
 
 HOME_PAGE = InlineKeyboardMarkup([
   [BUTTON1,CoolFonts]
