@@ -13,7 +13,7 @@ app = Flask(__name__, static_url_path='/static')
 
 @bot.message_handler(commands=['start'])
 def ak(m):
-  bot.send_message(m.chat.id,text="d9ne")#,reply_markup=Buttons.HOME_PAGE)
+  bot.send_message(m.chat.id,text="d9ne",reply_markup=Buttons.HOME_PAGE)
 
 @app.route('/' + TOKEN, methods=['POST'])
 def getMessage():
