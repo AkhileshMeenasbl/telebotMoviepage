@@ -21,7 +21,7 @@ DecorateText = InlineKeyboardButton(text='Decorate Text',callback_data='Decorate
  
 
 HOME_PAGE = InlineKeyboardMarkup([
-  [BUTTON1,DecorateText]
+  [CoolFonts,DecorateText]
   ])
 
 TOKEN = config.BOT_TOKEN
