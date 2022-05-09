@@ -7,5 +7,6 @@ About = InlineKeyboardButton(text='About ⚠️',callback_data='CoolFonts')
 
 
 HOME_PAGE = InlineKeyboardMarkup([
-  [BUTTON1,CoolFonts]
+  [Movie],
+  [Help,About]
   ])
