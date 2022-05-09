@@ -1,13 +1,13 @@
 Telegram.WebApp.ready()
 configureThemeColor(Telegram.WebApp.colorScheme);
-configureMainButton({text: 'view cart', color: '#008000', onclick: mainButtonClickListener});
+configureMainButton({text: 'Requested Movie', color: '#008000', onclick: mainButtonClickListener});
 Telegram.WebApp.MainButton.show();
 
 function mainButtonClickListener() {
-    if (Telegram.WebApp.MainButton.text.toLowerCase() === 'view cart') {
-        configureMainButton({text: 'close cart', color: '#FF0000', onclick: mainButtonClickListener});
+    if (Telegram.WebApp.MainButton.text.toLowerCase() === 'Requested Movie') {
+        configureMainButton({text: 'close', color: '#FF0000', onclick: mainButtonClickListener});
     } else {
-        configureMainButton({text: 'view cart', color: '#008000', onclick: mainButtonClickListener});
+        configureMainButton({text: 'Requested Movie', color: '#008000', onclick: mainButtonClickListener});
     }
     cart.classList.toggle('active');
 }
