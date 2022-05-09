@@ -1,2 +1,2 @@
 
-Welcomemsg = "Hi {}, This is our bot"
+Welcomemsg = "<b>❤️ Hi {}, This is our bot</b>"
