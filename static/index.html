@@ -9,13 +9,75 @@
   <meta name="HandheldFriendly" content="True" />
   <meta name="robots" content="noindex,nofollow" />
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <!-- For FONTS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- For FONTS -->
+  <!-- For Collapse -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- For Collapse -->
+  <!--
+  <link rel="stylesheet" href="./style.css">
+  <script src="./main.js" defer></script>
+  -->
   <link rel="stylesheet" href="/static/styles.css">
   <script src="/static/script.js" defer></script>
   <title>Web app</title>
 </head>
 <body>
-  <h1>akhil</h1>
-  <p>kya</p>
+  <div class="Header">
+    <img class="Logos" alt="Avatar" src="https://telegra.ph/file/718013660fe12472d504c.jpg">
+    <div class="Title">
+      <span class="Highlight">HD MOVIES </span><span class="AHighlight">CINEMA</span>
+    </div>
+  </div>
+  <nav class="NavMenu">
+      <li><a href="#Home">HOME</a></li>
+      <li><a href="#About">ABOUT</a></li>
+      <li><a href="#Help">HELP</a></li>
+      <li><a href="#Contact">CONTACT</a></li>
+  </nav>
+  <div class="Homesec">
+    <button id="NewRelease" class="BoxHomeButton" onclick="NewReleaseFunc()">New Released 💡</button>
+    <div id="NewRelease-Items" class="Hidden-Element">
+      Result of new Released Movies
+    </div>
+    <button id="Trending" class="BoxHomeButton" onclick="TrendingFunc()">Trending 🎯</button>
+    <div id="Trending-Items" class="Hidden-Element">
+      Result of Trending Movies
+    </div>
+  </div>
+  <div class="About">
+    <div class="BoxText" id="About">
+      <span class="BoxText-Heading">About</span>
+      <br />
+      <span class="BoxText-Text">Welcome ❤️, To our Official Web app bot. Here you can search movie of any type, genre, Region.
+      </span>
+    </div>
+  </div>
+  <div class="HelpSe">
+    <div class="BoxText" id="Help">
+      <span class="BoxText-Heading">Help</span>
+      <br />
+      <span class="BoxText-Text">● Type movie name to search <br />
+      ● You can search using name,IMDB id, Year ,Region Etc.
+      </span>
+    </div>
+  </div>
+  <div class="Contacts">
+    <div id="SocialButton" class="fa fa-telegram"></div>
+    <div id="SocialButton" class="fa fa-instagram"></div>
+    <div id="SocialButton" class="fa fa-whatsapp"></div>
+    <div id="SocialButton" class="fa fa-reddit"></div>
+    <div id="SocialButton" class="fa fa-twitter"></div>
+    <div id="SocialButton" class="fa fa-facebook"></div>
+    <div id="SocialButton" class="fa fa-github"></div>
+  </div>
+  <div class="Footer">
+    <span class="CopyRght">
+      © COPYRIGHT 2022 | AKHIL MEENA | ALL RIGHTS RESERVED.
+    </span>
+  </div>
 </body>
-
 </html>
