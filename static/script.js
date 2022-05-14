@@ -26,3 +26,27 @@ function mainButtonClickListener() {
     }
     /*cart.classList.toggle('active');*/
 }
+
+
+function NewReleaseFunc() {
+  var x = document.getElementById("NewRelease-Items");
+  var y = document.getElementById("NewRelease");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+    y.style.background = "none";
+  } else {
+    x.style.display = "block";
+    y.style.background = "rgb(95,95,95)";
+  }
+}
+function TrendingFunc() {
+  var x = document.getElementById("Trending-Items");
+  var y = document.getElementById("Trending");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+    y.style.background = "none";
+  } else {
+    x.style.display = "block";
+    y.style.background = "rgb(95,95,95)";
+  }
+}
