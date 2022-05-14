@@ -1,11 +1,219 @@
-/**/
+/*FONTS*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+    /*font-family: "Open Sans";*/
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+  /*font-family: 'Fredoka One', cursive;*/
+@import url('https://fonts.googleapis.com/css?family=Coiny');
+  /*font-family: 'Coiny', cursive;*/
+@font-face {
+  font-family:'frozen'; 
+  src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Ice%20kingdom%20-%20Bold%20-%20Por%20Kustren.woff');
+}
+  /*font-family: 'frozen', serif;*/
+/*BODY*/
 body {
-      position: relative;
-      min-height: 100vh;
-      background-image: url('https://telegra.ph/file/5399a5ef91f4c3b9dbd7f.jpg');
-      margin: 0;
-      padding: 0;
-      font-size: 16px;
-      background-size: cover;
-      background-attachment: fixed;
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background-image: url('https://telegra.ph/file/4710c1f31d08bd315861c.jpg');
+  background-size: cover;
+  background-attachment: fixed;
     }
+    
+/*HEADER*/
+.Logos,.Title{
+  display: inline-block;
+}
+
+.Highlight{
+  color: red;
+}
+.Logos{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left:10px;
+  animation: LogoAnimate 2s linear infinite;
+}
+@keyframes LogoAnimate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+  0% {
+    box-shadow: 0px 0px 2px 2px red;
+  }
+  25% {
+    box-shadow: 0px 0px 2px 2px  green;
+  }
+  50% {
+    box-shadow: 0px 0px 2px 2px pink;
+  }
+  75% {
+    box-shadow: 0px 0px 2px 2px blue;
+  }
+}
+
+.Title{
+  margin-left: 15px;
+  position: fixed;
+  top: 10px;
+  font-size: 25px;
+  color: white;
+  font-family: 'Coiny', cursive;
+  /*
+  font-family: 'Fredoka One', cursive;
+  font-family: 'frozen', serif;
+  */
+}
+.Title .Highlight{
+  text-shadow: 0 0 5px white;
+}
+.Title .AHighlight{
+  text-shadow: 0 0 5px white;
+}
+.Header{
+    border-bottom: 2px solid #4b5658;
+    background: rgba(255,255,255,0.091);
+    backdrop-filter: blur(20px);
+    padding: 10px 1px;
+}
+
+/*MENU LIST*/
+.NavMenu{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  list-style: none;
+  border-bottom: 2px solid #787474;
+  /*background-color: rgb(206,248,230);*/
+  backdrop-filter: blur(20px);
+}
+.NavMenu li{
+  width: auto;
+  }
+.NavMenu li a {
+  color: white;
+  text-shadow: 0px 0px 2px red;
+  font-size: 20px;
+  width: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
+}
+.NavMenu li a:hover {
+  background-size: 100%;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 5px white;
+  background: rgb(169,75,230);
+  backdrop-filter: blur(10px);
+  border: 0.5px solid rgb(169,75,230);
+  border-radius: 5px;
+  animation: line 2s linear infinite;
+  }
+@keyframes line {
+  0% {
+    background-color : transparent;
+    backdrop-filter : blur(10px);
+    font-family: 'frozen', serif;
+  }
+}
+
+/*FOOTER*/
+.Footer {
+  color: white;
+  background-color: #656363;
+  text-align: center;
+  width: 100%;
+  font-size: 10px;
+  padding: 10px;
+  border-top: 2px solid #575757;
+}
+
+.Footer .CopyRght{
+  color: black;
+  text-shadow: 1px 1px 0px black;
+}
+/* CONTACT */
+.Contacts{
+  background-color: #656363;
+  text-align: center;
+  padding: 5px;
+}
+.Contacts #SocialButton{
+  text-align:center;
+  color: #4e423a88;
+  border: 2px solid #4e423a88;
+  border-radius: 50px;
+  margin: 5px;
+  padding: 5px;
+}
+.Contacts #SocialButton:hover{
+  color: #46f19b83;
+  border-color: #46f19b83;
+  box-shadow: 0px 0px 2px #46f19b83;
+  text-shadow: 0px 0px 2px #46f19b83;
+}
+/* HELP SEC */
+.BoxText{
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  border: 0.5px solid transparent;
+  box-shadow: 5px 5px 2px #bbbaf3;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  margin: 12px;
+  width: 70%;
+  margin-left: 12%;
+  padding-left:20px;
+  padding-bottom:15px;
+}
+.BoxText-Heading{
+  color: Red;
+  text-shadow: 1px 1px 2px white;
+  font-size: 25px;
+  font-weight: bold;
+  font-style: italic;
+  position: relative;
+  left: 38%;
+}
+.BoxText-Text{
+  color: black;
+  text-shadow: 1px 1px 2px white;
+  font-size: 15px;
+  font-style: italic;
+  text-align: left;
+}
+.Hidden-Element{
+  display: none;
+}
+
+.Homesec{
+  text-align: center;
+}
+
+.BoxHomeButton{
+  border-top-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+  margin: 7px 0.1px;
+  width: 70%;
+  color: white;
+  text-shadow: 01px 01px 0px black;
+  font-weight: bold;
+  font-size: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  box-shadow: 5px 5px 2px rgba(191,187,185,0.669);
+}
+/*.BoxHomeButton:hover {
+  background-color: rgb(173,115,243);
+}*/
+
+
