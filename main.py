@@ -20,6 +20,14 @@ def ak(m):
 def GetMovies():
   search = ia.search_movie("Bahubali")
   return search
+  
+def html(content):  # Also allows you to set your own <head></head> etc
+   return '<html><head>custom head stuff here</head><body>' + content + '</body></html>'
+
+@app.route('/incorrect_pass')
+def incorrect_pass():
+    return html('Incorrect password. <a href="/">Go back?</a>')
+    # OR return
 
 @app.route('/home',methods=['POST','GET'])
 def index():
@@ -28,8 +36,8 @@ def index():
 @app.route("/class",methods=['POST','GET'])
 def akhil():
   search = ia.search_movie("Bahubali")
-  print(search)
-  return f"{str(search)[0:10]}"
+  #print(search)
+  return html('Incorrect password. <a href="/">Go back?</a>')
   
 
 @app.route('/' + TOKEN, methods=['POST'])
