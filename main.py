@@ -21,7 +21,7 @@ def GetMovies():
   search = ia.search_movie("Bahubali")
   return search
   
-def html(content):  # Also allows you to set your own <head></head> etc
+def html():  # Also allows you to set your own <head></head> etc
   search = ia.search_movie("Bahubali")
   Text = f"{search}"
   print(Text)
