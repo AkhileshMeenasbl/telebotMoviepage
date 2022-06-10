@@ -38,11 +38,11 @@ function NewReleaseFunc() {
     x.style.display = "block";
     y.style.background = "rgb(95,95,95)";
   }
-  let UrlFetch = fetch("https://hdmovie5.herokuapp.com/class")
+  let UrlFetch = fetch("https://hdmovie5.herokuapp.com/class");
   UrlFetch.then(res =>
     res.json()).then(d => {
-      console.log(d)
-    })
+      console.log(d);
+    });
 }
 
 const Newrsult = document.getElementById("NewRelease-Items");
