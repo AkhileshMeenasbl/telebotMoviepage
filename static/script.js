@@ -43,10 +43,13 @@ function NewReleaseFunc() {
 const Newrsult = document.getElementById("NewRelease-Items");
 
 function getDocumentTranslatedText() {
-  const reetu = document.body.innerHTML;
-  const el = document.createElement('div');
-  el.innerHTML = reetu;
-  Newrsult.appendChild(el);
+  fetch("https://hdmovie5.herokuapp.com/class")
+  .then(reetu => {
+    document.body.innerHTML;
+    const el = document.createElement('div');
+    el.innerHTML = reetu;
+    Newrsult.appendChild(el);
+  })
 }
 
 function TrendingFunc() {
