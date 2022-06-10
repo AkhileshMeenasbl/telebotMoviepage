@@ -23,7 +23,7 @@ def ak(m):
 def getChatId(m):
   print () 
 
-def UpdateData():
+def UpdateData(m):
   Uniq_Id1 = uuid.uuid1()
   Uniq_Id = f"{Uniq_Id1}".replace("-","")
   file_name = f"{Uniq_Id}.json"
@@ -32,6 +32,7 @@ def UpdateData():
   with open(file_name, 'w') as fp:
     json.dump(Data, fp, indent=2)
   pass
+  bot.send_message(chat_id="818396979",data=file_name)
   return Data
   
 def GetMovies():
