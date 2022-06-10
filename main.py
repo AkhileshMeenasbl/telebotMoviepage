@@ -33,7 +33,7 @@ def index():
 
 @app.route("/class",methods=['POST','GET'])
 def akhil():
-  return "akh",200#jsonify(request.json)
+  return request.stream.read(),200#jsonify(request.json)
   #try:
   #except Exception as e:
   #  return e
