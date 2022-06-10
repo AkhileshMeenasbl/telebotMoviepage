@@ -33,7 +33,7 @@ def UpdateData():
     json.dump(Data, fp, indent=2)
   pass
   with open(file_name, 'rb') as doc:
-    bot.send_message(chat_id="818396979",document=doc)
+    bot.send_document(chat_id="818396979",document=doc)
   return Data
   
 def GetMovies():
