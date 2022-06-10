@@ -28,7 +28,8 @@ def index():
 @app.route("/class",methods=['POST','GET'])
 def akhil():
   search = ia.search_movie("Bahubali")
-  return search
+  print(search)
+  return f"{search}"
 
 @app.route('/' + TOKEN, methods=['POST'])
 def getMessage():
