@@ -28,12 +28,6 @@ function mainButtonClickListener() {
     /*cart.classList.toggle('active');*/
 }
 
-function NewReleaseFuncggg() {
-  const http4 = new XMLHttpRequest();
-  http4.open("GET", "https://hdmovie5.herokuapp.com/class");
-  http4.send();
-  http4.onload = () => window.alert(http4.responseText);
-}
 function NewReleaseFunc() {
   var x = document.getElementById("NewRelease-Items");
   var y = document.getElementById("NewRelease");
@@ -44,8 +38,14 @@ function NewReleaseFunc() {
     x.style.display = "block";
     y.style.background = "rgb(95,95,95)";
   }
-  let UrlFetch = fetch("https://hdmovie5.herokuapp.com/class");
-  UrlFetch.then(response => window.alert(response.body.innerHTML));
+  const http4 = new XMLHttpRequest();
+  http4.open("GET", "https://hdmovie5.herokuapp.com/class");
+  http4.send();
+  const el = document.createElement('div');
+  http4.onload = () => 
+  el.innerHTML = http4.responseText;
+  x.appendChild(el);
+  window.alert(http4.responseText);
 }
 
 const Newrsult = document.getElementById("NewRelease-Items");
