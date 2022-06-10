@@ -7,6 +7,7 @@ import imdb
 import config
 import json
 import uuid 
+import string
 from Module import Buttons,GeneralTxt
 
 TOKEN = config.BOT_TOKEN
@@ -24,7 +25,7 @@ def getChatId(m):
 
 def UpdateData():
   Uniq_Id1 = uuid.uuid1()
-  Uniq_Id = Uniq_Id1.replace("-","")
+  Uniq_Id = f"{Uniq_Id1}".replace("-","")
   file_name = f"{Uniq_Id}"
   parent_dir = "Downloads/"
   path = os.path.join(parent_dir, file_name) 
