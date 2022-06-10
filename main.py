@@ -6,6 +6,7 @@ from flask import Flask, request, abort, send_file, jsonify
 import imdb
 import config
 import json
+import uuid 
 from Module import Buttons,GeneralTxt
 
 TOKEN = config.BOT_TOKEN
@@ -19,18 +20,21 @@ def ak(m):
   bot.send_message(m.chat.id,text=GeneralTxt.Welcomemsg.format(m.chat.first_name),reply_markup=Buttons.HOME_PAGE)
 
 def getChatId(m):
-  chat_id = m.chat.id
-  return str(chat_id)
+  print () 
 
 def UpdateData():
-  path = os.path.join(parent_dir, directory) 
-  isExist = os.path.exists(path)
-  if not isExist:
-    os.mkdir(path)
-  else:
-    pass
-
-
+  Uniq_Id1 = uuid.uuid1()
+  Uniq_Id = Uniq_Id1.replace("-","")
+  file_name = f"{Uniq_Id}"
+  parent_dir = "Downloads/"
+  path = os.path.join(parent_dir, file_name) 
+  data = "{}"
+  with open(path) as f:
+    data = json.load(f)
+  with open(path, 'w') as f:
+    json.dump(data, f, indent=2)
+  return "sucess"
+  
 def GetMovies():
   search = ia.search_movie("Bahubali")
   return search
@@ -47,7 +51,7 @@ def index():
 
 @app.route("/class",methods=['POST','GET'])
 def akhil():
-  return getChatId()
+  return UpdateData()
   
 
 @app.route('/' + TOKEN, methods=['POST'])
