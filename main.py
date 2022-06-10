@@ -26,7 +26,7 @@ def getChatId(m):
 def UpdateData():
   Uniq_Id1 = uuid.uuid1()
   Uniq_Id = f"{Uniq_Id1}".replace("-","")
-  file_name = f"{Uniq_Id}"
+  file_name = f"{Uniq_Id}.json"
   parent_dir = "Downloads/"
   path = os.path.join(parent_dir, file_name) 
   data = "{}"
