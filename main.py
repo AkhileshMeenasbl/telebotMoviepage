@@ -37,7 +37,8 @@ def index():
 def akhil():
   search = ia.search_movie("Bahubali")
   #print(search)
-  return html('Incorrect password. <a href="/">Go back?</a>')
+  return html(f'{search}')
+  #return html('Incorrect password. <a href="/">Go back?</a>')
   
 
 @app.route('/' + TOKEN, methods=['POST'])
