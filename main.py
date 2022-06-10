@@ -3,7 +3,7 @@ import telebot
 from utils import parse_init_data
 from telebot import TeleBot
 from flask import Flask, request, abort, send_file
-
+import imdb
 import config
 from Module import Buttons,GeneralTxt
 
@@ -11,14 +11,24 @@ TOKEN = config.BOT_TOKEN
 bot = TeleBot(token=TOKEN, parse_mode="HTML")
 app = Flask(__name__, static_url_path='/static')
 
+ia = imdb.IMDb()
+
 @bot.message_handler(commands=['start'])
 def ak(m):
   bot.send_message(m.chat.id,text=GeneralTxt.Welcomemsg.format(m.chat.first_name),reply_markup=Buttons.HOME_PAGE)
+
+def GetMovies():
+  search = ia.search_movie("Bahubali")
+  return search
 
 @app.route('/home',methods=['POST','GET'])
 def index():
   return send_file('static/index.html')
 
+@app.route("/class",methods=['POST','GET'])
+def akhil():
+  search = ia.search_movie("Bahubali")
+  return search
 
 @app.route('/' + TOKEN, methods=['POST'])
 def getMessage():
@@ -30,6 +40,7 @@ def webhook():
     bot.remove_webhook()
     bot.set_webhook(url=f"https://hdmovie5.herokuapp.com/{TOKEN}")
     return "!", 200
+
  
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
