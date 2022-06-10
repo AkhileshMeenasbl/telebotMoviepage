@@ -49,17 +49,6 @@ function NewReleaseFunc() {
   window.alert(http4.responseText);
 }
 
-const Newrsult = document.getElementById("NewRelease-Items");
-
-function getDocumentTranslatedText() {
-  UrlFetch.then(reetu => {
-    document.body.innerHTML;
-    const el = document.createElement('div');
-    el.innerHTML = reetu;
-    Newrsult.appendChild(el);
-  });
-}
-
 function TrendingFunc() {
   var x = document.getElementById("Trending-Items");
   var y = document.getElementById("Trending");
