@@ -34,12 +34,10 @@ def index():
 
 @app.route("/class",methods=['POST','GET'])
 def akhil():
-  data = json.loads(request.data)
-  text = data.get("text",None)
-  if text is None:
-    return jsonify({"message":"text not found"})
-  else:
-    return jsonify(data)
+  content = request.get_json()
+  print(content)
+  # The content could be displayed in html page if serialized as json
+  return jsonify(content)
   
 
 @app.route('/' + TOKEN, methods=['POST'])
