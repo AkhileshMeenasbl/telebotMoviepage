@@ -29,22 +29,23 @@ function mainButtonClickListener() {
 }
 
 function NewReleaseFunc() {
+  const http4 = new XMLHttpRequest();
+  http4.open("GET", "https://hdmovie5.herokuapp.com/class");
+  http4.send();
+  const el = document.createElement('div');
+  
   var x = document.getElementById("NewRelease-Items");
   var y = document.getElementById("NewRelease");
   if (x.style.display === "block") {
     x.style.display = "none";
     y.style.background = "none";
   } else {
+    http4.onload = () => 
+    el.innerHTML = http4.responseText;
+    x.appendChild(el);
     x.style.display = "block";
     y.style.background = "rgb(95,95,95)";
   }
-  const http4 = new XMLHttpRequest();
-  http4.open("GET", "https://hdmovie5.herokuapp.com/class");
-  http4.send();
-  const el = document.createElement('div');
-  http4.onload = () => 
-  el.innerHTML = http4.responseText;
-  x.appendChild(el);
   window.alert(http4.responseText);
 }
 
