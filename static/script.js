@@ -48,7 +48,7 @@ function NewReleaseFunc() {
 const Newrsult = document.getElementById("NewRelease-Items");
 
 function getDocumentTranslatedText() {
-  .then(reetu => {
+  UrlFetch.then(reetu => {
     document.body.innerHTML;
     const el = document.createElement('div');
     el.innerHTML = reetu;
