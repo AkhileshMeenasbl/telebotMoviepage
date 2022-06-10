@@ -28,15 +28,12 @@ function mainButtonClickListener() {
     /*cart.classList.toggle('active');*/
 }
 
-let url = "https://hdmovie5.herokuapp.com/class";
-function fetchAsync (url) {
-  let response = fetch(url);
-  let data = response.json();
-  window.alert(data);
-  return data;
+function NewReleaseFuncggg() {
+  const http4 = new XMLHttpRequest();
+  http4.open("GET", "https://hdmovie5.herokuapp.com/class");
+  http4.send();
+  http4.onload = () => window.alert(http4.responseText);
 }
-
-
 function NewReleaseFunc() {
   var x = document.getElementById("NewRelease-Items");
   var y = document.getElementById("NewRelease");
