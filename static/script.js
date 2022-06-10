@@ -38,6 +38,7 @@ function NewReleaseFunc() {
     x.style.display = "block";
     y.style.background = "rgb(95,95,95)";
   }
+  console.log("akhil")
   let UrlFetch = fetch("https://hdmovie5.herokuapp.com/class");
   UrlFetch.then(response => console.log(response));
 }
