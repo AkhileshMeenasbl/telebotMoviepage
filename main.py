@@ -22,12 +22,10 @@ def GetMovies():
   return search
   
 def html(content):  # Also allows you to set your own <head></head> etc
-   return '<html><head>custom head stuff here</head><body>' + content + '</body></html>'
-
-@app.route('/incorrect_pass')
-def incorrect_pass():
-    return html('Incorrect password. <a href="/">Go back?</a>')
-    # OR return
+  search = ia.search_movie("Bahubali")
+  Text = f"{search}"
+  print(Text)
+  return '<html><head>custom head stuff here</head><body>' + Text + '</body></html>'
 
 @app.route('/home',methods=['POST','GET'])
 def index():
@@ -35,10 +33,7 @@ def index():
 
 @app.route("/class",methods=['POST','GET'])
 def akhil():
-  search = ia.search_movie("Bahubali")
-  #print(search)
-  return html(f'{search}')
-  #return html('Incorrect password. <a href="/">Go back?</a>')
+  return html()
   
 
 @app.route('/' + TOKEN, methods=['POST'])
