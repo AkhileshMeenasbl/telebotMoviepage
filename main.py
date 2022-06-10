@@ -30,7 +30,7 @@ def UpdateData():
   parent_dir = "Downloads/"
   path = os.path.join(parent_dir, file_name) 
   data = "{}"
-  with open('myfile.txt', 'w') as fp: 
+  with open(path, 'w') as fp: 
     pass
   return "sucess"
   
