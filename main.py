@@ -23,7 +23,7 @@ def ak(m):
 def getChatId(m):
   print () 
 
-def UpdateData(m):
+def UpdateData():
   Uniq_Id1 = uuid.uuid1()
   Uniq_Id = f"{Uniq_Id1}".replace("-","")
   file_name = f"{Uniq_Id}.json"
