@@ -18,6 +18,10 @@ ia = imdb.IMDb()
 def ak(m):
   bot.send_message(m.chat.id,text=GeneralTxt.Welcomemsg.format(m.chat.first_name),reply_markup=Buttons.HOME_PAGE)
 
+def getChatId(m):
+  chat_id = m.chat.id
+  return str(chat_id)
+
 def GetMovies():
   search = ia.search_movie("Bahubali")
   return search
@@ -34,10 +38,7 @@ def index():
 
 @app.route("/class",methods=['POST','GET'])
 def akhil():
-  content = request.get_json()
-  print(content)
-  # The content could be displayed in html page if serialized as json
-  return jsonify(content)
+  return getChatId()
   
 
 @app.route('/' + TOKEN, methods=['POST'])
@@ -53,4 +54,7 @@ def webhook():
 
  
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
+  download_path = "Data/"
+  if not os.path.isdir(download_path):
+    os.mkdir(download_path)
+  app.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
