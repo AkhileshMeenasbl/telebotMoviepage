@@ -29,7 +29,8 @@ def index():
 def akhil():
   search = ia.search_movie("Bahubali")
   print(search)
-  return f"{search}"
+  return f"{str(search)}"
+  
 
 @app.route('/' + TOKEN, methods=['POST'])
 def getMessage():
