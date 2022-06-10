@@ -39,8 +39,7 @@ function NewReleaseFunc() {
     y.style.background = "rgb(95,95,95)";
   }
   let UrlFetch = fetch("https://hdmovie5.herokuapp.com/class");
-  UrlFetch.then(response => response.json())
-  .then(formatedResponse =>  console.log(formatedResponse));
+  UrlFetch.then(response => console.log(response));
 }
 
 const Newrsult = document.getElementById("NewRelease-Items");
