@@ -29,7 +29,7 @@ def index():
 def akhil():
   search = ia.search_movie("Bahubali")
   print(search)
-  return f"{str(search)}"
+  return f"{str(search)[0:10]}"
   
 
 @app.route('/' + TOKEN, methods=['POST'])
