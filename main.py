@@ -2,7 +2,7 @@ import os
 import telebot
 from utils import parse_init_data
 from telebot import TeleBot
-from flask import Flask, request, abort, send_file
+from flask import Flask, request, abort, send_file, jsonify
 import imdb
 import config
 from Module import Buttons,GeneralTxt
