@@ -1,4 +1,5 @@
-Telegram.WebApp.ready()
+console.log("akkdkdkekh");
+Telegram.WebApp.ready();
 /*MAIN BUTTON CONFIGURE*/
 Telegram.WebApp.MainButton.show();
 configureMainButton({text: 'requested movie', color: '#008000', onclick: mainButtonClickListener});
