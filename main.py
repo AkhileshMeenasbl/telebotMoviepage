@@ -33,11 +33,12 @@ def index():
 
 @app.route("/class",methods=['POST','GET'])
 def akhil():
-  return request.stream.read(),200#jsonify(request.json)
-  #try:
-  #except Exception as e:
-  #  return e
-  #return html()
+  data = json.loads(request.data)
+  text = data.get("text",None)
+  if text is None:
+    return jsonify({"message":"text not found"})
+  else:
+    return jsonify(data)
   
 
 @app.route('/' + TOKEN, methods=['POST'])
