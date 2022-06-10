@@ -28,6 +28,14 @@ function mainButtonClickListener() {
     /*cart.classList.toggle('active');*/
 }
 
+let url = "https://hdmovie5.herokuapp.com/class";
+function fetchAsync (url) {
+  let response = fetch(url);
+  let data = response.json();
+  window.alert(data);
+  return data;
+}
+
 
 function NewReleaseFunc() {
   var x = document.getElementById("NewRelease-Items");
