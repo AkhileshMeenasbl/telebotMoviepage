@@ -38,12 +38,16 @@ function NewReleaseFunc() {
     x.style.display = "block";
     y.style.background = "rgb(95,95,95)";
   }
+  let UrlFetch = fetch("https://hdmovie5.herokuapp.com/class")
+  UrlFetch.then(res =>
+    res.json()).then(d => {
+      console.log(d)
+    })
 }
 
 const Newrsult = document.getElementById("NewRelease-Items");
 
 function getDocumentTranslatedText() {
-  fetch("https://hdmovie5.herokuapp.com/class")
   .then(reetu => {
     document.body.innerHTML;
     const el = document.createElement('div');
