@@ -7,3 +7,4 @@ itsdangerous==2.0.1
 Jinja2==3.0.2
 MarkupSafe==2.0.1
 pyTelegramBotAPI==4.5.0
+IMDbPY==2020.9.25
