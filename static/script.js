@@ -39,6 +39,16 @@ function NewReleaseFunc() {
     y.style.background = "rgb(95,95,95)";
   }
 }
+
+const Newrsult = document.getElementById("NewRelease-Items");
+
+function getDocumentTranslatedText() {
+  const reetu = document.body.innerHTML;
+  const el = document.createElement('div');
+  el.innerHTML = reetu;
+  Newrsult.appendChild(el);
+}
+
 function TrendingFunc() {
   var x = document.getElementById("Trending-Items");
   var y = document.getElementById("Trending");
@@ -50,3 +60,4 @@ function TrendingFunc() {
     y.style.background = "rgb(95,95,95)";
   }
 }
+
