@@ -22,6 +22,15 @@ def getChatId(m):
   chat_id = m.chat.id
   return str(chat_id)
 
+def UpdateData():
+  path = os.path.join(parent_dir, directory) 
+  isExist = os.path.exists(path)
+  if not isExist:
+    os.mkdir(path)
+  else:
+    pass
+
+
 def GetMovies():
   search = ia.search_movie("Bahubali")
   return search
