@@ -30,8 +30,8 @@ def UpdateData():
   parent_dir = "Downloads/"
   path = os.path.join(parent_dir, file_name) 
   data = "{}"
-  with open(path, 'w') as f:
-    json.dump(data, f, indent=2)
+  with open('myfile.txt', 'w') as fp: 
+    pass
   return "sucess"
   
 def GetMovies():
