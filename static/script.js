@@ -39,10 +39,9 @@ function NewReleaseFunc() {
     y.style.background = "rgb(95,95,95)";
   }
   let UrlFetch = fetch("https://hdmovie5.herokuapp.com/class");
-  UrlFetch.then(res =>
-    res.json()).then(d => {
-      console.log(d);
-    });
+  UrlFetch.then(function(response){
+    console.log(response.text());
+  });
 }
 
 const Newrsult = document.getElementById("NewRelease-Items");
@@ -53,7 +52,7 @@ function getDocumentTranslatedText() {
     const el = document.createElement('div');
     el.innerHTML = reetu;
     Newrsult.appendChild(el);
-  })
+  });
 }
 
 function TrendingFunc() {
