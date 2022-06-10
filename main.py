@@ -28,6 +28,7 @@ def UpdateData():
   Uniq_Id = f"{Uniq_Id1}".replace("-","")
   file_name = f"{Uniq_Id}.json"
   Data = GetMovies()
+  print(Data)
   with open(file_name, 'w') as fp:
     json.dump(Data, fp, indent=2)
   pass
