@@ -33,7 +33,7 @@ def UpdateData():
   parent_dir = "Downloads/"
   path = os.path.join(parent_dir, file_name) 
   data = "{}"
-  with open(path, 'w') as fp: 
+  with open(file_name, 'w') as fp: 
     pass
   return "sucess"
   
