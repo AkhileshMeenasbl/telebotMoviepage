@@ -35,8 +35,21 @@ def UpdateData():
   return "sucess"
   
 def GetMovies():
+  #[<Movie id:4549714[http] title:_"Bahubali" (2008)_>, <Movie id:2631186[http] title:_Baahubali: The Beginning (2015)_>, <Movie id:4849438[http] title:_Baahubali 2: The Conclusion (2017)_>, <Movie id:13452374[http] title:_"Bahubali" Episode #1.70 (2009)_>, <Movie id:6940950[http] title:_"Bahubali" Episode #1.1 (2008)_>, <Movie id:5216536[http] title:_Hum Bahubali (2008)_>, <Movie id:6575210[http] title:_"Hubahu" (2002)_>, <Movie id:5523460[http] title:_"Baahubali: The Lost Legends" (2017)_>, <Movie id:7618900[http
+  Result = {}
   search = ia.search_movie("Bahubali")
-  return search
+  srchrslt = f"{search}"
+  srchrslt1 = srchrslt[2:]
+  srchrslt2 = srchrslt1[:-3]
+  srchrslt3 = str(srchrslt2)
+  srchrslt4 = srchrslt3.split("_>, <")
+  for i in srchrslt4:
+    startid = i.find("Movie id:") + len("Movie id:")
+    endid = i.find("[http]")
+    iid = i[startid:endid]
+    ttl = i.partition("title:_")[2]
+    Result[str(iid)] = str(ttl)
+  return Result
   
 def html():  # Also allows you to set your own <head></head> etc
   search = ia.search_movie("Bahubali")
