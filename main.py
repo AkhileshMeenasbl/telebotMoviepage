@@ -24,6 +24,9 @@ def getChatId(m):
   print () 
 
 def UpdateData():
+  download_path = "Data/"
+  if not os.path.isdir(download_path):
+    os.mkdir(download_path)
   Uniq_Id1 = uuid.uuid1()
   Uniq_Id = f"{Uniq_Id1}".replace("-","")
   file_name = f"{Uniq_Id}.json"
@@ -66,7 +69,4 @@ def webhook():
 
  
 if __name__ == "__main__":
-  download_path = "Data/"
-  if not os.path.isdir(download_path):
-    os.mkdir(download_path)
   app.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
