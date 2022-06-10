@@ -32,7 +32,7 @@ def UpdateData():
   with open(file_name, 'w') as fp:
     json.dump(Data, fp, indent=2)
   pass
-  return data
+  return Data
   
 def GetMovies():
   #[<Movie id:4549714[http] title:_"Bahubali" (2008)_>, <Movie id:2631186[http] title:_Baahubali: The Beginning (2015)_>, <Movie id:4849438[http] title:_Baahubali 2: The Conclusion (2017)_>, <Movie id:13452374[http] title:_"Bahubali" Episode #1.70 (2009)_>, <Movie id:6940950[http] title:_"Bahubali" Episode #1.1 (2008)_>, <Movie id:5216536[http] title:_Hum Bahubali (2008)_>, <Movie id:6575210[http] title:_"Hubahu" (2002)_>, <Movie id:5523460[http] title:_"Baahubali: The Lost Legends" (2017)_>, <Movie id:7618900[http
