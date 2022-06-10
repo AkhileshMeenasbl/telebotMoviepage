@@ -27,8 +27,10 @@ def UpdateData():
   Uniq_Id1 = uuid.uuid1()
   Uniq_Id = f"{Uniq_Id1}".replace("-","")
   file_name = f"{Uniq_Id}.json"
-  with open(file_name, 'w') as fp: 
-    pass
+  Data = GetMovies()
+  with open(file_name, 'w') as fp:
+    json.dump(Data, fp, indent=2)
+  pass
   return "sucess"
   
 def GetMovies():
