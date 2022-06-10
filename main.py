@@ -33,7 +33,8 @@ def index():
 
 @app.route("/class",methods=['POST','GET'])
 def akhil():
-  return html()
+  return jsonify(request.json)
+  #return html()
   
 
 @app.route('/' + TOKEN, methods=['POST'])
