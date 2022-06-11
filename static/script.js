@@ -29,8 +29,16 @@ function mainButtonClickListener() {
 }
 
 
+function NewReleaseFunc(){
+  const http4 = new XMLHttpRequest();
+  http4.open("GET", "https://hdmovie5.herokuapp.com/class");
+  http4.send();
+  var FileAnme = http4.responseText;
+  window.alert(FileAnme);
+}
 
-function NewReleaseFunc() {
+
+function NewReleaseFuncYyy() {
   const http4 = new XMLHttpRequest();
   http4.open("GET", "https://hdmovie5.herokuapp.com/class");
   http4.send();
