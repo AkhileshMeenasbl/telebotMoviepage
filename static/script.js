@@ -33,8 +33,8 @@ function NewReleaseFunc(){
   fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/class')
   .then(function(response) {
     response.text().then(function(data) {
-      /*window.alert(data);*/
       const Filename = String(data);
+      window.alert(Filename);
     });
     });
   var request = new XMLHttpRequest();
@@ -44,11 +44,11 @@ function NewReleaseFunc(){
   request.onload = function(){ 
     if (request.status >= 200 && request.status < 400) {
       // Success!
-      window.alert(MovieResult)
+      window.alert(MovieResult);
     } else {
       // Error//
     }
-}
+};
 
 
 function NewReleaseFuncYyy() {
