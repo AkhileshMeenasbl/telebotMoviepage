@@ -49,6 +49,7 @@ function NewReleaseFunc(){
       // Error//
     }
 };
+}
 
 
 function NewReleaseFuncYyy() {
