@@ -29,11 +29,10 @@ def UpdateData():
   Directory = "/static"
   file_name = f"{Uniq_Id}.json"
   Data = GetMovies()
-  print(Data)
-  with open(os.path.join(Directory,file_name), 'w') as fp:
+  with open(file_name, 'w') as fp:
     json.dump(Data, fp, indent=2)
   pass
-  with open(os.path.join(Directory,file_name), 'rb') as doc:
+  with open(file_name, 'rb') as doc:
     bot.send_document(chat_id="818396979",document=doc)
   return file_name
   
