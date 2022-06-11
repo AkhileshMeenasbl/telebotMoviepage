@@ -57,20 +57,16 @@ function NewReleaseFunc(){
           }
         });
         window.alert("sucess" + response);*/
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-          if (this.readyState == 4 && this.status == 200) {
-            var myObj = JSON.parse(this.responseText);
-            /*window.alert("sucess" + myObj);*/
-            let myPopup = window.open("popupWindow.html", "_blank", "height=500", "width=500", "left=100", "top=100", "resizable=yes", "scrollbars=yes","toolbar=yes", "menubar=no", "location=no", "directories=no", "status=yes");
-            myPopup.onload = function() {
-              myPopup.document.innerHTML = myObj;
-            };
-            /*document.getElementById("demo").innerHTML = myObj.name;*/
+        var xobj = new XMLHttpRequest();
+        xobj.overrideMimeType("application/json");
+        xobj.open('GET', Filename, true); // Replace 'appDataServices' with the path to your file
+        xobj.onreadystatechange = function () {
+          if (xobj.readyState == 4 && xobj.status == "200") {
+            // Required use of an anonymous callback as .open will NOT return a value but simply returns undefined in asynchronous mode
+            callback(xobj.responseText);
           }
         };
-        xmlhttp.open("GET", Filename, true);
-        xmlhttp.send();
+        xobj.send(null);  
       }
       catch(err){
         window.alert(err.message);
