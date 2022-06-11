@@ -1,3 +1,4 @@
+import axios from 'axios';
 
 Telegram.WebApp.ready();
 /*MAIN BUTTON CONFIGURE*/
@@ -36,11 +37,9 @@ function NewReleaseFunc(){
       const Filename = String(data);
       /*window.alert(Filename);*/
       try{
-        const response = fetch(Filename);
-        const items = response.json();
-        items.forEach((item, index) => {
-          window.alert(item);
-        });
+        const response = axios.get(Filename);
+        const item = response.data;
+        window.alert(item);
         /*const fs = require('fs');
         const dir = './' + String(Filename);
         if (fs.existsSync(dir)) {
