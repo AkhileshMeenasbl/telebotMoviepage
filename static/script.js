@@ -43,12 +43,20 @@ function NewReleaseFunc(){
         } else {
           window.alert('Directory not found.');
         }*/
-        fetch(Filename)
+        /*fetch(Filename)
         .then(response => response.json())
-        /*.then(window.alert(response.responseText))*/
-        /*.then(data => window.alert(data))*/
+        .then(window.alert(response.responseText))
+        .then(data => window.alert(data))
         .catch(error => window.alert(error));
-        window.alert("sucess");
+        */
+        $.ajax({
+          url: Filename, //the path of the file is replaced by File.json
+          dataType: "json",
+          success: function (response) {
+            console.log(response); //it will return the json array
+          }
+        });
+        window.alert("sucess" + response);
       }
       catch(err){
         window.alert(err.message);
