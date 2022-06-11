@@ -33,7 +33,7 @@ function NewReleaseFunc(){
   const http4 = new XMLHttpRequest();
   http4.open("GET", "https://hdmovie5.herokuapp.com/class");
   http4.send();
-  var FileAnme = http4.responseText;
+  const FileAnme = http4.responseText;
   window.alert(FileAnme);
 }
 
