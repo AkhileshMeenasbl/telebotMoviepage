@@ -61,7 +61,11 @@ function NewReleaseFunc(){
         xmlhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             var myObj = JSON.parse(this.responseText);
-            window.alert("sucess" + myObj);
+            /*window.alert("sucess" + myObj);*/
+            let myPopup = window.open("popupWindow.html", "_blank", "height=500", "width=500", "left=100", "top=100", "resizable=yes", "scrollbars=yes","toolbar=yes", "menubar=no", "location=no", "directories=no", "status=yes");
+            myPopup.onload = function() {
+              myPopup.document.innerHTML = myObj;
+            };
             /*document.getElementById("demo").innerHTML = myObj.name;*/
           }
         };
