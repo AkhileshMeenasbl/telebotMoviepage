@@ -28,10 +28,20 @@ function mainButtonClickListener() {
     /*cart.classList.toggle('active');*/
 }
 
+
+
 function NewReleaseFunc() {
   const http4 = new XMLHttpRequest();
   http4.open("GET", "https://hdmovie5.herokuapp.com/class");
   http4.send();
+  var FileAnme = http4.responseText;
+  //http4.onload = () => 
+    //
+    
+  var request = new XMLHttpRequest();
+  request.open('GET', FileAnme, true);
+  
+  var MovieResult = JSON.parse(request.responseText);
   const el = document.createElement('div');
   
   var x = document.getElementById("NewRelease-Items");
@@ -40,14 +50,19 @@ function NewReleaseFunc() {
     x.style.display = "none";
     y.style.background = "none";
   } else {
-    http4.onload = () => 
-    el.innerHTML = http4.responseText;
-    x.appendChild(el);
+    request.onload = function(){ 
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      el.innerHTML = MovieResult;
+      x.appendChild(el);
+    } else {
+      // Error//
+    }
     x.style.display = "block";
     y.style.background = "rgb(95,95,95)";
-  }
+  };
   window.alert(http4.responseText);
-}
+}}
 
 function TrendingFunc() {
   var x = document.getElementById("Trending-Items");
