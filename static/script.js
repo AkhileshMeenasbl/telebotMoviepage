@@ -1,4 +1,4 @@
-import axios from 'axios';
+/*import axios from 'axios';*/
 
 Telegram.WebApp.ready();
 /*MAIN BUTTON CONFIGURE*/
