@@ -34,9 +34,9 @@ function NewReleaseFunc(){
   .then(function(response) {
     response.text().then(function(data) {
       const Filename = String(data);
-      window.alert(Filename);
     });
     });
+  window.alert(Filename);
   var request = new XMLHttpRequest();
   request.open('GET', Filename, true);
 
