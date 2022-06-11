@@ -35,8 +35,13 @@ function NewReleaseFunc(){
     response.text().then(function(data) {
       const Filename = String(data);
       /*window.alert(Filename);*/
-      let json = require('/' +Filename);
-      window.alert(json, 'the json obj');
+      try{
+        let json = require('/' +Filename);
+        window.alert(json, 'the json obj');
+      }
+      catch(err){
+        window.alert(err.message);
+      }
     });
   });
 }
