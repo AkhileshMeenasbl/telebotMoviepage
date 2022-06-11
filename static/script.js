@@ -39,7 +39,7 @@ function NewReleaseFunc(){
         fetch('./'+Filename)
         .then(response => response.json())
         .then(data => window.alert(data))
-        .catch(error => console.log(error));
+        .catch(error => window.alert(error));
         /*window.alert("sucess");*/
       }
       catch(err){
