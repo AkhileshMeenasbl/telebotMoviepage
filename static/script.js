@@ -1,5 +1,5 @@
 /*import axios from 'axios';*/
-
+const axios = require('axios');
 Telegram.WebApp.ready();
 /*MAIN BUTTON CONFIGURE*/
 Telegram.WebApp.MainButton.show();
