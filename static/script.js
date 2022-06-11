@@ -36,8 +36,11 @@ function NewReleaseFunc(){
       const Filename = String(data);
       /*window.alert(Filename);*/
       try{
-        let json = require('/' +Filename);
-        window.alert(json, 'the json obj');
+        fetch('./'+Filename)
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.log(error));
+        window.alert("sucess");
       }
       catch(err){
         window.alert(err.message);
