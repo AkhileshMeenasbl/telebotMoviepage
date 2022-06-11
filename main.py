@@ -26,14 +26,14 @@ def getChatId(m):
 def UpdateData():
   Uniq_Id1 = uuid.uuid1()
   Uniq_Id = f"{Uniq_Id1}".replace("-","")
-  Directory = ""
-  file_name = f"/static/{Uniq_Id}.json"
+  Directory = "/static"
+  file_name = f"{Uniq_Id}.json"
   Data = GetMovies()
   print(Data)
-  with open(file_name, 'w') as fp:
+  with open(os.join.path(Directory,file_name), 'w') as fp:
     json.dump(Data, fp, indent=2)
   pass
-  with open(file_name, 'rb') as doc:
+  with open(os.join.path(Directory,file_name), 'rb') as doc:
     bot.send_document(chat_id="818396979",document=doc)
   return file_name
   
