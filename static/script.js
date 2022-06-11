@@ -34,21 +34,21 @@ function NewReleaseFunc(){
   .then(function(response) {
     response.text().then(function(data) {
       const Filename = String(data);
+      /*window.alert(Filename);*/
+      
+      var request = new XMLHttpRequest();
+      request.open('GET', Filename, true);
+      var MovieResult = JSON.parse(request.responseText);
+      request.onload = function(){ 
+        if (request.status >= 200 && request.status < 400) {
+        // Success!
+        window.alert(MovieResult);
+      } else {
+        // Error//
+        }
+      };
     });
-    });
-  window.alert(Filename);
-  var request = new XMLHttpRequest();
-  request.open('GET', Filename, true);
-
-  var MovieResult = JSON.parse(request.responseText);
-  request.onload = function(){ 
-    if (request.status >= 200 && request.status < 400) {
-      // Success!
-      window.alert(MovieResult);
-    } else {
-      // Error//
-    }
-};
+  });
 }
 
 
