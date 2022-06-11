@@ -1,4 +1,4 @@
-console.log("akkdkdkekh");
+
 Telegram.WebApp.ready();
 /*MAIN BUTTON CONFIGURE*/
 Telegram.WebApp.MainButton.show();
@@ -33,9 +33,21 @@ function NewReleaseFunc(){
   fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/class')
   .then(function(response) {
     response.text().then(function(data) {
-      window.alert(data);
+      /*window.alert(data);*/
+      const Filename = String(data);
     });
     });
+  var request = new XMLHttpRequest();
+  request.open('GET', Filename, true);
+
+  var MovieResult = JSON.parse(request.responseText);
+  request.onload = function(){ 
+    if (request.status >= 200 && request.status < 400) {
+      // Success!
+      window.alert(MovieResult)
+    } else {
+      // Error//
+    }
 }
 
 
