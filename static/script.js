@@ -34,11 +34,13 @@ function NewReleaseFunc(){
   .then(function(response) {
     response.text().then(function(data) {
       const Filename = String(data);
-      window.alert(Filename);
+      /*window.alert(Filename);*/
       try{
         const response = fetch(Filename);
         const items = response.json();
-        window.alert(items);
+        items.forEach((item, index) => {
+          window.alert(item);
+        }
         /*const fs = require('fs');
         const dir = './' + String(Filename);
         if (fs.existsSync(dir)) {
