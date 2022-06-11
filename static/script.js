@@ -1,4 +1,3 @@
-const fs = require('fs');
 
 Telegram.WebApp.ready();
 /*MAIN BUTTON CONFIGURE*/
@@ -37,6 +36,7 @@ function NewReleaseFunc(){
       const Filename = String(data);
       /*window.alert(Filename);*/
       try{
+        const fs = require('fs');
         const dir = './' + String(Filename);
         if (fs.existsSync(dir)) {
           window.alert('Directory exists!');
