@@ -38,7 +38,7 @@ function NewReleaseFunc(){
       try{
         fetch("/" + Filename)
         .then(response => response.json())
-        .then(data => window.alert(data))
+        .then(data => window.alert(data.responseText))
         .catch(error => window.alert(error));
         /*window.alert("sucess");*/
       }
