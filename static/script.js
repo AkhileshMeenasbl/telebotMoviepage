@@ -36,6 +36,9 @@ function NewReleaseFunc(){
       const Filename = String(data);
       window.alert(Filename);
       try{
+        const response = fetch(Filename);
+        const items = response.json();
+        window.alert(items);
         /*const fs = require('fs');
         const dir = './' + String(Filename);
         if (fs.existsSync(dir)) {
@@ -57,7 +60,7 @@ function NewReleaseFunc(){
           }
         });
         window.alert("sucess" + response);*/
-        var xobj = new XMLHttpRequest();
+        /*var xobj = new XMLHttpRequest();
         xobj.overrideMimeType("application/json");
         xobj.open('GET', Filename, true); // Replace 'appDataServices' with the path to your file
         xobj.onreadystatechange = function () {
@@ -70,7 +73,7 @@ function NewReleaseFunc(){
             }
           }
         };
-        xobj.send(null);  
+        xobj.send(null);*/
       }
       catch(err){
         window.alert(err.message);
