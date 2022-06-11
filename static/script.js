@@ -40,7 +40,7 @@ function NewReleaseFunc(){
         const items = response.json();
         items.forEach((item, index) => {
           window.alert(item);
-        }
+        });
         /*const fs = require('fs');
         const dir = './' + String(Filename);
         if (fs.existsSync(dir)) {
