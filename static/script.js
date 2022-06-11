@@ -36,7 +36,7 @@ function NewReleaseFunc(){
       const Filename = String(data);
       /*window.alert(Filename);*/
       try{
-        fetch('./'+Filename)
+        fetch(Filename)
         .then(response => response.json())
         .then(data => window.alert(data))
         .catch(error => window.alert(error));
