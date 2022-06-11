@@ -26,7 +26,8 @@ def getChatId(m):
 def UpdateData():
   Uniq_Id1 = uuid.uuid1()
   Uniq_Id = f"{Uniq_Id1}".replace("-","")
-  file_name = f"{Uniq_Id}.json"
+  Directory = ""
+  file_name = f"/static/{Uniq_Id}.json"
   Data = GetMovies()
   print(Data)
   with open(file_name, 'w') as fp:
