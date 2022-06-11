@@ -49,14 +49,24 @@ function NewReleaseFunc(){
         .then(data => window.alert(data))
         .catch(error => window.alert(error));
         */
-        $.ajax({
+        /*$.ajax({
           url: Filename, //the path of the file is replaced by File.json
           dataType: "json",
           success: function (response) {
             console.log(response); //it will return the json array
           }
         });
-        window.alert("sucess" + response);
+        window.alert("sucess" + response);*/
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            var myObj = JSON.parse(this.responseText);
+            window.alert("sucess" + myObj);
+            /*document.getElementById("demo").innerHTML = myObj.name;*/
+          }
+        };
+        xmlhttp.open("GET", Filename, true);
+        xmlhttp.send();
       }
       catch(err){
         window.alert(err.message);
