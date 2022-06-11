@@ -30,11 +30,12 @@ function mainButtonClickListener() {
 
 
 function NewReleaseFunc(){
-  const http4 = new XMLHttpRequest();
-  http4.open("GET", "https://hdmovie5.herokuapp.com/class");
-  http4.send();
-  const FileAnme = http4.responseText;
-  window.alert(FileAnme);
+  fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/class')
+  .then(function(response) {
+    response.text().then(function(data) {
+      window.alert(data);
+    });
+    });
 }
 
 
@@ -42,8 +43,10 @@ function NewReleaseFuncYyy() {
   const http4 = new XMLHttpRequest();
   http4.open("GET", "https://hdmovie5.herokuapp.com/class");
   http4.send();
-  var FileAnme = http4.responseText;
-  //http4.onload = () => 
+  http4.onload = function(){
+    var FileAnme = http4.responseText;
+    window.alert(FileAnme);
+  };//http4.onload = () => 
     //
     
   var request = new XMLHttpRequest();
