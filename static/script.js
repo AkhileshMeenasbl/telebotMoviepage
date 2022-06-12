@@ -73,6 +73,7 @@ function TopMoviesName() {
     response.text().then(function(data) {
       const Filename = JSON.parse(data);
       for (const xy in Filename) {
+        window.aler(xy)
       }
     })
   });
