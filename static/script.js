@@ -85,21 +85,20 @@ function NewReleaseFunc(){
 
 
 function NewReleaseFuncYyy() {
-  const http4 = new XMLHttpRequest();
-  http4.open("GET", "https://hdmovie5.herokuapp.com/class");
-  http4.send();
-  http4.onload = function(){
-    var FileAnme = http4.responseText;
-    window.alert(FileAnme);
-  };//http4.onload = () => 
-    //
-    
-  var request = new XMLHttpRequest();
-  request.open('GET', FileAnme, true);
-  
-  var MovieResult = JSON.parse(request.responseText);
-  const el = document.createElement('div');
-  
+  fetch("languages.json")
+  .then(response => response.json())
+  .then(json => {
+    const Result = json;
+    for (const xy in Result) {
+      const el = document.createElement('div');
+      const Text = "<br>Movie Id :" + xy + "<br>Name :"+ Result[xy];
+      el.innerHTML = String(Text);
+      var Newitem = document.getElementById("NewRelease-Items");
+      Newitem.appendChild(el);
+      /*window.alert(x);
+      console.log(Result[x]);*/
+    }
+  });
   var x = document.getElementById("NewRelease-Items");
   var y = document.getElementById("NewRelease");
   if (x.style.display === "block") {
