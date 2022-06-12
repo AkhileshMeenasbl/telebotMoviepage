@@ -34,8 +34,16 @@ function NewReleaseFunc() {
   fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/class')
   .then(function(response) {
     response.text().then(function(data) {
-      const Filename = data.json();
-      window.alert(Filename);
+      const Filename = data;
+      for (const xy in Filename) {
+        const el = document.createElement('div');
+        const Text = "<br>Movie Id :" + xy + "<br>Name :"+ Result[xy];
+        el.innerHTML = String(Text);
+        var Newitem = document.getElementById("NewRelease-Items");
+        Newitem.appendChild(el);
+        /*window.alert(x);
+        console.log(Result[x]);*/
+        }
       /*fetch("/static/foodItems.json")
       fetch(data)
       .then((res) => {
