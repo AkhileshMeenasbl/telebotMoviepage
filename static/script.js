@@ -89,7 +89,7 @@ function NewReleaseFunc() {
   .then(function(response) {
     response.text().then(function(data) {
       const Filename = String(data);
-      /*window.alert(Filename);*/
+      window.alert(Filename);
       try{
           fetch("languages.json")
           .then(response => response.json())
@@ -108,30 +108,19 @@ function NewReleaseFunc() {
           }
       catch(err){
         window.alert(err.message);
-      }
+        }
+      });
     });
-  });
-}
-
+  }
   var x = document.getElementById("NewRelease-Items");
   var y = document.getElementById("NewRelease");
   if (x.style.display === "block") {
     x.style.display = "none";
     y.style.background = "none";
   } else {
-    request.onload = function(){ 
-    if (request.status >= 200 && request.status < 400) {
-      // Success!
-      el.innerHTML = MovieResult;
-      x.appendChild(el);
-    } else {
-      // Error//
-    }
     x.style.display = "block";
     y.style.background = "rgb(95,95,95)";
-  };
-  window.alert(http4.responseText);
-}}
+  }
 
 function TrendingFunc() {
   var x = document.getElementById("Trending-Items");
