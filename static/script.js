@@ -37,7 +37,7 @@ function NewReleaseFunc() {
       const Filename = JSON.parse(data);
       for (const xy in Filename) {
         const el = document.createElement('div');
-        const Text = "<br>Movie Id :" + xy + "<br>Name :"+ Result[xy];
+        const Text = "<br>Movie Id :" + xy + "<br>Name :"+ Filename[xy];
         el.innerHTML = String(Text);
         var Newitem = document.getElementById("NewRelease-Items");
         Newitem.appendChild(el);
