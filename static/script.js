@@ -90,7 +90,7 @@ function NewReleaseFunc() {
     response.text().then(function(data) {
       const Filename = data;
       try{
-          fetch("foodItems.json")
+          fetch(Filename)
           .then(response => response.json())
           .then(json => {
             /*window.alert("akhil");
