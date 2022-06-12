@@ -93,7 +93,7 @@ function NewReleaseFunc() {
           fetch(Filename)
           .then(response => response.json())
           .then(json => {
-            window.alert("akhil");
+            /*window.alert("akhil");
             const Result = json;
             for (const xy in Result) {
               const el = document.createElement('div');
@@ -101,9 +101,9 @@ function NewReleaseFunc() {
               el.innerHTML = String(Text);
               var Newitem = document.getElementById("NewRelease-Items");
               Newitem.appendChild(el);
-              /*window.alert(x);
-              console.log(Result[x]);*/
-              }
+              */window.alert(x);/*
+              console.log(Result[x]);
+              }*/
             });
           }
       catch(err){
