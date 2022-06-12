@@ -1,57 +1,19 @@
-'''from bs4 import BeautifulSoup
-import requests
 import re
-
-# Download IMDB's Top 250 data
-url = 'http://www.imdb.com/chart/top'
-response = requests.get(url)
-soup = BeautifulSoup(response.text, 'lxml')
-
-movies = soup.select('td.titleColumn')
-links = [a.attrs.get('href') for a in soup.select('td.titleColumn a')]
-crew = [a.attrs.get('title') for a in soup.select('td.titleColumn a')]
-ratings = [b.attrs.get('data-value') for b in soup.select('td.posterColumn span[name=ir]')]
-votes = [b.attrs.get('data-value') for b in soup.select('td.ratingColumn strong')]
-
-imdb = []
-
-# Store each item into dictionary (data), then put those into a list (imdb)
-for index in range(0, len(movies)):
-    # Seperate movie into: 'place', 'title', 'year'
-    movie_string = movies[index].get_text()
-    movie = (' '.join(movie_string.split()).replace('.', ''))
-    movie_title = movie[len(str(index))+1:-7]
-    year = re.search('\((.*?)\)', movie_string).group(1)
-    place = movie[:len(str(index))-(len(movie))]
-    data = {"movie_title": movie_title,
-            "year": year,
-            "place": place,
-            "star_cast": crew[index],
-            "rating": ratings[index],
-            "vote": votes[index],
-            "link": links[index]}
-    imdb.append(data)
-
-for item in imdb:
-    print(item['link'])
-'''
-
-
-
-
-
 import os
-import telebot
-from utils import parse_init_data
-from telebot import TeleBot
-from flask import Flask, request, abort, send_file, jsonify
-import imdb
-import config
 import json
+import imdb
 import uuid 
 import string
-from Module import Buttons,GeneralTxt
+import config
 import logging
+import telebot
+import requests
+import html_to_json
+from telebot import TeleBot
+from bs4 import BeautifulSoup
+from utils import parse_init_data
+from flask import Flask, request, abort, send_file, jsonify
+from Module import Buttons,GeneralTxt
 
 logging.basicConfig(level=logging.DEBUG)
 ia = imdb.IMDb()
@@ -64,6 +26,25 @@ app = Flask(__name__, static_url_path='/static')
 @bot.message_handler(commands=['start'])
 def ak(m):
   bot.send_message(m.chat.id,text=GeneralTxt.Welcomemsg.format(m.chat.first_name),reply_markup=Buttons.HOME_PAGE)
+
+def newMovieData():
+  NewMovie = {}
+  url = "https://www.bollywoodhungama.com/movies/"
+  response = requests.get(url)
+  akhil = response.text
+  soup = BeautifulSoup(response.text, 'html.parser')
+  Data = soup.find_all("div", class_="bh-in-theatres-slider")
+  soup2 = BeautifulSoup(f"{Data[0]}", 'html.parser')
+  for i in soup2.find_all("figure"):
+    soup3 = BeautifulSoup(f"{i}", 'html.parser')
+    soup4 = soup3.find_all("img")
+    output_json = html_to_json.convert(f"{soup4}")
+    Title = output_json["img"][0]["_attributes"]["title"]
+    AllUrls = output_json["img"][0]["_attributes"]["srcset"]#[-1])
+    ImageUrls = re.findall(r'(https?://[^\s]+)', AllUrls)
+    PosterLink = ImageUrls[-1]
+    NewMovie[Title] = PosterLink
+  return NewMovie
 
 def UpdateData():
   Uniq_Id1 = uuid.uuid1()
@@ -110,14 +91,9 @@ def index():
 def akhil():
   return UpdateData()
 
-
-
-
-
-
-
-
-
+@app.route("/newmovie",methods=['POST','GET'])
+def akhil():
+  return newMovieData()
 
 
 @app.route('/' + TOKEN, methods=['POST'])
