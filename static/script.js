@@ -1,5 +1,5 @@
 /*import axios from 'axios';*/
-const axios = require('axios');
+
 Telegram.WebApp.ready();
 /*MAIN BUTTON CONFIGURE*/
 Telegram.WebApp.MainButton.show();
@@ -30,7 +30,7 @@ function mainButtonClickListener() {
 }
 
 
-function NewReleaseFunc(){
+function NewReleaseFunchj(){
   fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/class')
   .then(function(response) {
     response.text().then(function(data) {
@@ -84,7 +84,7 @@ function NewReleaseFunc(){
 }
 
 
-function NewReleaseFuncYyy() {
+function NewReleaseFunc() {
   fetch("languages.json")
   .then(response => response.json())
   .then(json => {
