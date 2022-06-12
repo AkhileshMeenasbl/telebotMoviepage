@@ -89,26 +89,15 @@ function NewReleaseFunc() {
   .then(function(response) {
     response.text().then(function(data) {
       const Filename = data;
-      try{
-          fetch("/static/foodItems.json")
-          .then(response => response.json())
-          .then(json => {
-            /*window.alert("akhil");
-            const Result = json;
-            for (const xy in Result) {
-              const el = document.createElement('div');
-              const Text = "<br>Movie Id :" + xy + "<br>Name :"+ Result[xy];
-              el.innerHTML = String(Text);
-              var Newitem = document.getElementById("NewRelease-Items");
-              Newitem.appendChild(el);
-              */window.alert(x);/*
-              console.log(Result[x]);
-              }*/
-            });
+      fetch("/static/foodItems.json")
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error('Response not OK', res);
           }
-      catch(err){
-        window.alert(err.message);
-        }
+          return res;
+        }).then(/* your then handler */).catch((e) => {
+          alert('There was an error!!');
+          });
       });
     });
   var x = document.getElementById("NewRelease-Items");
