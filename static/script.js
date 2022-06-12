@@ -68,14 +68,19 @@ function TrendingFunc() {
 }
 
 function TopMoviesName() {
-  fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/class')
+  fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/newmovie')
   .then(function(response) {
     response.text().then(function(data) {
       const Filename = JSON.parse(data);
       for (const xy in Filename) {
-        window.aler(xy)
+        const el = document.createElement('div');
+        const Text = "<br>Movie Id :" + xy + "<br>Name :"+ Filename[xy];
+        el.innerHTML = String(Text);
+        var Newitem = document.getElementById("NewRelease-Items");
+        Newitem.appendChild(el);
+        window.aler(xy);
       }
-    })
+    });
   });
 }
 
