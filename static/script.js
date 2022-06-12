@@ -89,7 +89,8 @@ function NewReleaseFunc() {
   .then(function(response) {
     response.text().then(function(data) {
       const Filename = data;
-      fetch("/static/foodItems.json")
+      /*fetch("/static/foodItems.json")*/
+      fetch("foodItems.json")
       .then((res) => {
         if (!res.ok) {
           throw new Error('Response not OK', res);
