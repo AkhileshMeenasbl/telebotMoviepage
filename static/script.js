@@ -85,20 +85,34 @@ function NewReleaseFunchj(){
 
 
 function NewReleaseFunc() {
-  fetch("languages.json")
-  .then(response => response.json())
-  .then(json => {
-    const Result = json;
-    for (const xy in Result) {
-      const el = document.createElement('div');
-      const Text = "<br>Movie Id :" + xy + "<br>Name :"+ Result[xy];
-      el.innerHTML = String(Text);
-      var Newitem = document.getElementById("NewRelease-Items");
-      Newitem.appendChild(el);
-      /*window.alert(x);
-      console.log(Result[x]);*/
-    }
+  fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/class')
+  .then(function(response) {
+    response.text().then(function(data) {
+      const Filename = String(data);
+      /*window.alert(Filename);*/
+      try{
+          fetch("languages.json")
+          .then(response => response.json())
+          .then(json => {
+            const Result = json;
+            for (const xy in Result) {
+              const el = document.createElement('div');
+              const Text = "<br>Movie Id :" + xy + "<br>Name :"+ Result[xy];
+              el.innerHTML = String(Text);
+              var Newitem = document.getElementById("NewRelease-Items");
+              Newitem.appendChild(el);
+              /*window.alert(x);
+              console.log(Result[x]);*/
+              }
+            });
+          }
+      catch(err){
+        window.alert(err.message);
+      }
+    });
   });
+}
+
   var x = document.getElementById("NewRelease-Items");
   var y = document.getElementById("NewRelease");
   if (x.style.display === "block") {
