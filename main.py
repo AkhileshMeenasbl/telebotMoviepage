@@ -65,7 +65,7 @@ def index():
     app.logger.error('error:')
 
 @app.route("/akhil",methods=['POST','GET'])
-def akhil():
+def akhilu():
   return html()
   
 @app.route("/class",methods=['POST','GET'])
