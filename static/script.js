@@ -89,9 +89,8 @@ function NewReleaseFunc() {
   .then(function(response) {
     response.text().then(function(data) {
       const Filename = String(data);
-      window.alert(Filename);
       try{
-          fetch("languages.json")
+          fetch(Filename)
           .then(response => response.json())
           .then(json => {
             const Result = json;
