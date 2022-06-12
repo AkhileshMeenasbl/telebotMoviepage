@@ -111,7 +111,6 @@ function NewReleaseFunc() {
         }
       });
     });
-  }
   var x = document.getElementById("NewRelease-Items");
   var y = document.getElementById("NewRelease");
   if (x.style.display === "block") {
@@ -121,6 +120,7 @@ function NewReleaseFunc() {
     x.style.display = "block";
     y.style.background = "rgb(95,95,95)";
   }
+}
 
 function TrendingFunc() {
   var x = document.getElementById("Trending-Items");
