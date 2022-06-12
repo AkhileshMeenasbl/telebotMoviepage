@@ -91,9 +91,9 @@ function NewReleaseFunc() {
       const Filename = String(data);
       try{
           fetch(Filename)
-          window.alert("akhil")
           .then(response => response.json())
           .then(json => {
+            window.alert("akhil");
             const Result = json;
             for (const xy in Result) {
               const el = document.createElement('div');
