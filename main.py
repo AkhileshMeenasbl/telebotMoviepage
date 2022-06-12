@@ -1,4 +1,4 @@
-from bs4 import BeautifulSoup
+'''from bs4 import BeautifulSoup
 import requests
 import re
 
@@ -34,7 +34,7 @@ for index in range(0, len(movies)):
 
 for item in imdb:
     print(item['link'])
-
+'''
 
 
 
