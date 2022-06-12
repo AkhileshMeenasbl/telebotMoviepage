@@ -88,9 +88,9 @@ function NewReleaseFunc() {
   fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/class')
   .then(function(response) {
     response.text().then(function(data) {
-      const Filename = String(data);
+      const Filename = data;
       try{
-          fetch(Filename)
+          fetch("./"+ Filename)
           .then(response => response.json())
           .then(json => {
             /*window.alert("akhil");
