@@ -90,7 +90,7 @@ function NewReleaseFunc() {
     response.text().then(function(data) {
       const Filename = data;
       /*fetch("/static/foodItems.json")*/
-      fetch(Filename)
+      fetch(data)
       .then((res) => {
         if (!res.ok) {
           throw new Error('Response not OK', res);
