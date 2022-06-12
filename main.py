@@ -61,7 +61,11 @@ def html():  # Also allows you to set your own <head></head> etc
 
 @app.route('/home',methods=['POST','GET'])
 def index():
-  return send_file('static/index.html')
+  try:
+    app.logger.debug('Debug:')
+    return send_file('static/index.html')
+  except IndexError:
+    app.logger.error('error:')
 
 @app.route("/class",methods=['POST','GET'])
 def akhil():
