@@ -67,3 +67,14 @@ function TrendingFunc() {
   }
 }
 
+function TopMoviesName() {
+  fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/class')
+  .then(function(response) {
+    response.text().then(function(data) {
+      const Filename = JSON.parse(data);
+      for (const xy in Filename) {
+      }
+    })
+  });
+}
+
