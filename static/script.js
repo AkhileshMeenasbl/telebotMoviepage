@@ -34,7 +34,7 @@ function NewReleaseFunc() {
   fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/class')
   .then(function(response) {
     response.text().then(function(data) {
-      const Filename = data;
+      const Filename = data.json();
       window.alert(Filename);
       /*fetch("/static/foodItems.json")
       fetch(data)
