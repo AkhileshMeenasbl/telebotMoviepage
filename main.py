@@ -9,6 +9,9 @@ import json
 import uuid 
 import string
 from Module import Buttons,GeneralTxt
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
 
 TOKEN = config.BOT_TOKEN
 bot = TeleBot(token=TOKEN, parse_mode="HTML")
@@ -61,6 +64,7 @@ def html():  # Also allows you to set your own <head></head> etc
 
 @app.route('/home',methods=['POST','GET'])
 def index():
+  app.logger.info()
   try:
     app.logger.debug('Debug:')
     return send_file('static/index.html')
