@@ -1,3 +1,45 @@
+from bs4 import BeautifulSoup
+import requests
+import re
+
+# Download IMDB's Top 250 data
+url = 'http://www.imdb.com/chart/top'
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'lxml')
+
+movies = soup.select('td.titleColumn')
+links = [a.attrs.get('href') for a in soup.select('td.titleColumn a')]
+crew = [a.attrs.get('title') for a in soup.select('td.titleColumn a')]
+ratings = [b.attrs.get('data-value') for b in soup.select('td.posterColumn span[name=ir]')]
+votes = [b.attrs.get('data-value') for b in soup.select('td.ratingColumn strong')]
+
+imdb = []
+
+# Store each item into dictionary (data), then put those into a list (imdb)
+for index in range(0, len(movies)):
+    # Seperate movie into: 'place', 'title', 'year'
+    movie_string = movies[index].get_text()
+    movie = (' '.join(movie_string.split()).replace('.', ''))
+    movie_title = movie[len(str(index))+1:-7]
+    year = re.search('\((.*?)\)', movie_string).group(1)
+    place = movie[:len(str(index))-(len(movie))]
+    data = {"movie_title": movie_title,
+            "year": year,
+            "place": place,
+            "star_cast": crew[index],
+            "rating": ratings[index],
+            "vote": votes[index],
+            "link": links[index]}
+    imdb.append(data)
+
+for item in imdb:
+    print(item['link'])
+
+
+
+
+
+
 import os
 import telebot
 from utils import parse_init_data
@@ -49,11 +91,11 @@ def GetMovies():
     ttl = i.partition("title:_")[2]
     Result[str(iid)] = str(ttl)
   return Result
-  
-def html():  # Also allows you to set your own <head></head> etc
-  search = ia.search_movie("desh")
-  Text = f"{search}"
-  return '<html><head>custom head stuff here</head><body>' + Text + '</body></html>'
+
+
+
+
+
 
 @app.route('/home',methods=['POST','GET'])
 def index():
@@ -64,14 +106,19 @@ def index():
   except IndexError:
     app.logger.error('error:')
 
-@app.route("/akhil",methods=['POST','GET'])
-def akhilu():
-  return html()
-  
 @app.route("/class",methods=['POST','GET'])
 def akhil():
   return UpdateData()
-  
+
+
+
+
+
+
+
+
+
+
 
 @app.route('/' + TOKEN, methods=['POST'])
 def getMessage():
