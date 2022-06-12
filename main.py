@@ -34,7 +34,6 @@ def UpdateData():
   Data = GetMovies()
   with open(file_name, 'w') as fp:
     json.dump(Data, fp, indent=2)
-  pass
   with open(file_name, 'rb') as doc:
     bot.send_document(chat_id="818396979",document=doc)
   return file_name
