@@ -34,7 +34,7 @@ function NewReleaseFunc() {
   fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/class')
   .then(function(response) {
     response.text().then(function(data) {
-      const Filename = data;
+      const Filename = JSON.parse(data);
       for (const xy in Filename) {
         const el = document.createElement('div');
         const Text = "<br>Movie Id :" + xy + "<br>Name :"+ Result[xy];
