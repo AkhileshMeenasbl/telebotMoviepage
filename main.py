@@ -64,7 +64,7 @@ def html():  # Also allows you to set your own <head></head> etc
 
 @app.route('/home',methods=['POST','GET'])
 def index():
-  app.logger.info()
+  app.logger.info("akhil")
   try:
     app.logger.debug('Debug:')
     return send_file('static/index.html')
