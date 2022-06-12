@@ -1,6 +1,6 @@
-/*import axios from 'axios';*/
 
 Telegram.WebApp.ready();
+
 /*MAIN BUTTON CONFIGURE*/
 Telegram.WebApp.MainButton.show();
 configureMainButton({text: 'requested movie', color: '#008000', onclick: mainButtonClickListener});
@@ -41,19 +41,7 @@ function NewReleaseFunc() {
         el.innerHTML = String(Text);
         var Newitem = document.getElementById("NewRelease-Items");
         Newitem.appendChild(el);
-        /*window.alert(x);
-        console.log(Result[x]);*/
         }
-      /*fetch("/static/foodItems.json")
-      fetch(data)
-      .then((res) => {
-        if (!res.ok) {
-          throw new Error('Response not OK', res);
-          }
-          return res;*/
-        /*}).then(/* your then handler *//*).catch((e) => {
-          alert('There was an error!!');
-          });*/
       });
     });
   var x = document.getElementById("NewRelease-Items");
