@@ -219,3 +219,7 @@ body {
   background-color: rgb(173,115,243);
 }*/
 
+.slideshow-container{
+  align-content: center;
+  width: 100%;
+}
