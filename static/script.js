@@ -91,6 +91,7 @@ function TopMoviesName() {
         ImageBox.appendChild(CaptionText);
         var Newitem = document.getElementById("Slide-Top-Movie");
         Newitem.appendChild(ImageBox);
+        break;
         /*const Text = "<br>Movie Id :" + xy + "<br>Name :"+ Filename[xy];
         window.alert(xy);
         var Newitem = document.getElementById("NewRelease-Items");
