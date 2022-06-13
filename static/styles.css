@@ -222,3 +222,7 @@ body {
 .Ctext{
   color: black;
 }
+
+.mySlides-fade{
+  border: 2px solid black;
+}
