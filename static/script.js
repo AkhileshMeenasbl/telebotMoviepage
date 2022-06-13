@@ -78,8 +78,10 @@ function TopMoviesName() {
         const ImageBox = document.createElement('div');
         ImageBox.className = "mySlides-fade";
         const ImageValue = document.createElement('img');
-        /*ImageValue.setAttribute('src',String(Filename[String(xy)]));
-        */ImageValue.setAttribute('src',"https://media2.bollywoodhungama.in/wp-content/uploads/2020/11/Janhit-Mein-Jaari-6-352x450.jpg");
+        /*
+        ImageValue.setAttribute('src',"https://media2.bollywoodhungama.in/wp-content/uploads/2020/11/Janhit-Mein-Jaari-6-352x450.jpg");
+        */
+        ImageValue.setAttribute('src',String(Filename[String(xy)]));
         ImageValue.setAttribute('height', '30px');
         ImageValue.setAttribute('width', 'auto');
         const CaptionText = document.createElement('div');
