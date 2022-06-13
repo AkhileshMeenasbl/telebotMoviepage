@@ -78,8 +78,8 @@ function TopMoviesName() {
         /*NewLine.className = "Box-NewMovie"*/
         NewLine.innerHTML = String(xy);
         var Newitem = document.getElementById("Slide-Top-Movie");
-        Newitem.appendChild(NewLine);
         window.alert(xy);
+        Newitem.appendChild(NewLine);
         /*const Text = "<br>Movie Id :" + xy + "<br>Name :"+ Filename[xy];
         var Newitem = document.getElementById("NewRelease-Items");
         Newitem.appendChild(el);
