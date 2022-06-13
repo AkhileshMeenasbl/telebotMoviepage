@@ -219,28 +219,3 @@ body {
   background-color: rgb(173,115,243);
 }*/
 
-/* Slideshow container */
-.slideshow-container {
-  max-width: 1000px;
-  margin: auto;
-}
-
-/* Hide the images by default */
-.mySlides-fade{
-  display: none;
-}
-
-/* Caption text */
-.Ctext {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
