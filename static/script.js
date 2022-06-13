@@ -74,10 +74,10 @@ function TopMoviesName() {
     response.text().then(function(data) {
       const Filename = JSON.parse(data);
       for (const xy in Filename) {
-        const NewLine = document.createElement('div');
+        const NewLine = document.createElement('h3');
         NewLine.className = "Box-NewMovie"
         NewLine.innerHTML = String(xy);
-        var Newitem = document.getElementById("Slide Top Movie");
+        var Newitem = document.getElementById("Slide-Top-Movie");
         Newitem.appendChild(Newitem);
         /*const Text = "<br>Movie Id :" + xy + "<br>Name :"+ Filename[xy];
         var Newitem = document.getElementById("NewRelease-Items");
