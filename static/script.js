@@ -66,6 +66,7 @@ function TrendingFunc() {
     y.style.background = "rgb(95,95,95)";
   }
 }
+TopMoviesName();
 
 function TopMoviesName() {
   fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/newmovie')
@@ -73,12 +74,14 @@ function TopMoviesName() {
     response.text().then(function(data) {
       const Filename = JSON.parse(data);
       for (const xy in Filename) {
-        const el = document.createElement('div');
-        const Text = "<br>Movie Id :" + xy + "<br>Name :"+ Filename[xy];
-        el.innerHTML = String(Text);
+        const NewLine = document.createElement('div');
+        NewLine.className = "Box-NewMovie"
+        NewLine.innerHTML = String(xy);
+        
+        /*const Text = "<br>Movie Id :" + xy + "<br>Name :"+ Filename[xy];
         var Newitem = document.getElementById("NewRelease-Items");
         Newitem.appendChild(el);
-        window.aler(xy);
+        window.aler(xy);*/
       }
     });
   });
