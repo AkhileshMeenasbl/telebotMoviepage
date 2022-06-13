@@ -76,7 +76,7 @@ function TopMoviesName() {
       for (const xy in Filename) {
         /*window.alert(Filename[String(xy)]);*/
         const ImageBox = document.createElement('div');
-        ImageBox.className = "mySlides";
+        ImageBox.className = "mySlides-fade";
         const ImageValue = document.createElement('img');
         /*
         ImageValue.setAttribute('src',"https://media2.bollywoodhungama.in/wp-content/uploads/2020/11/Janhit-Mein-Jaari-6-352x450.jpg");
