@@ -74,10 +74,10 @@ function TopMoviesName() {
     response.text().then(function(data) {
       const Filename = JSON.parse(data);
       for (const xy in Filename) {
+        window.alert(xy);
         const ImageBox = document.createElement('div');
         ImageBox.className = "mySlides fade";
         const ImageValue = document.createElement('img');
-        window.alert(Filename);
         ImageValue.setAttribute('src',Filename[xy]);
         ImageValue.setAttribute('height', '40%');
         ImageValue.setAttribute('width', '40%');
