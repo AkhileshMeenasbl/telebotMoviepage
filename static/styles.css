@@ -222,4 +222,5 @@ body {
 .slideshow-container{
   align-content: center;
   width: 100%;
+  border: 1px solid red;
 }
