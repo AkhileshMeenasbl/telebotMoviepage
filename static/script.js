@@ -1,5 +1,6 @@
 
 Telegram.WebApp.ready();
+TopMoviesName();
 
 /*MAIN BUTTON CONFIGURE*/
 Telegram.WebApp.MainButton.show();
@@ -66,7 +67,6 @@ function TrendingFunc() {
     y.style.background = "rgb(95,95,95)";
   }
 }
-TopMoviesName();
 
 function TopMoviesName() {
   fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/newmovie')
@@ -74,6 +74,7 @@ function TopMoviesName() {
     response.text().then(function(data) {
       const Filename = JSON.parse(data);
       for (const xy in Filename) {
+        window.alert(xy);
         const NewLine = document.createElement('h3');
         NewLine.className = "Box-NewMovie"
         NewLine.innerHTML = String(xy);
