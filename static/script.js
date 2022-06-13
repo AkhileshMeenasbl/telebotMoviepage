@@ -77,20 +77,21 @@ function TopMoviesName() {
         /*window.alert(Filename[String(xy)]);*/
         const ImageBox = document.createElement('div');
         ImageBox.className = "mySlides-fade";
-        const ImageValue = document.createElement('img');
-        /*
-        ImageValue.setAttribute('src',"https://media2.bollywoodhungama.in/wp-content/uploads/2020/11/Janhit-Mein-Jaari-6-352x450.jpg");
-        */
+        /*const ImageValue = document.createElement('img');
         ImageValue.setAttribute('src',String(Filename[String(xy)]));
         ImageValue.setAttribute('height', '30px');
         ImageValue.setAttribute('width', 'auto');
-        const CaptionText = document.createElement('div');
+        */const CaptionText = document.createElement('div');
         CaptionText.className = "Ctext";
         CaptionText.innerHTML = String(xy);
-        ImageBox.appendChild(ImageValue);
+        /*ImageBox.appendChild(ImageValue);*/
         ImageBox.appendChild(CaptionText);
         var Newitem = document.getElementById("Slide-Top-Movie");
         Newitem.appendChild(ImageBox);
+        Newitem.setAttribute('background-image', "url('https://telegra.ph/file/4710c1f31d08bd315861c.jpg')");
+        /*background-image: url('https://telegra.ph/file/4710c1f31d08bd315861c.jpg');
+  background-size: cover;
+  background-attachment: fixed;*/
         break;
         /*const Text = "<br>Movie Id :" + xy + "<br>Name :"+ Filename[xy];
         window.alert(xy);
