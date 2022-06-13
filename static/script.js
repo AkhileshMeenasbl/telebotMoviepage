@@ -78,7 +78,7 @@ function TopMoviesName() {
         const ImageBox = document.createElement('div');
         ImageBox.className = "mySlides fade";
         const ImageValue = document.createElement('img');
-        ImageValue.setAttribute('src',Filename[String(xy)]);
+        ImageValue.setAttribute('src',string(Filename[String(xy)]));
         ImageValue.setAttribute('height', '40%');
         ImageValue.setAttribute('width', '40%');
         const CaptionText = document.createElement('div');
