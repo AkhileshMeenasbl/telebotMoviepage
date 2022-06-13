@@ -88,7 +88,7 @@ def index():
     app.logger.error('error:')
 
 @app.route("/class",methods=['POST','GET'])
-def akhil():
+def akhilu():
   return UpdateData()
 
 @app.route("/newmovie",methods=['POST','GET'])
