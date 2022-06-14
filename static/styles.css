@@ -220,10 +220,7 @@ body {
 }*/
 
 .slideshow-container{
-  align-content: center;
-  width: 50%;
+  width: auto;
   height: auto;
-  border: 1px solid red;
-  background-size: cover;
-  background-attachment: fixed;
+  border: 2px solid black;
 }
