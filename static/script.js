@@ -75,7 +75,7 @@ function TopMoviesName() {
       const Filename = JSON.parse(data);
       for (const xy in Filename) {
         var Newitem = document.getElementById("Slide-Top-Movie");
-        const UrlImage = 'https://telegra.ph/file/ef2b00a5fcac69ebfe43c.jpg';
+        const UrlImage = String(Filename[String(xy)]);
         Newitem.style.background = "url('" + UrlImage + "') blue repeat-x center";
         /*
         var backgroundStle = "--bg-image: " + String(UrlImage) + ";";
