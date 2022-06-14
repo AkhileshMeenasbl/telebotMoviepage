@@ -222,7 +222,7 @@ body {
 .slideshow-container{
   border: 2px solid black;
   height: auto;
-  width: 100%;
+  width: auto;
   background-size: contain;
   background-attachment: fixed;
 }
