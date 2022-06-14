@@ -219,10 +219,28 @@ body {
   background-color: rgb(173,115,243);
 }*/
 
-.slideshow-container{
-  border: 2px solid black;
-  height: auto;
-  width: auto;
+#slideshow-container {
+  width: 100%;
+  /* whatever width you want */
+  display: inline-block;
+  position: relative;
   background-size: contain;
-  background-attachment: fixed;
+  background: url('https://upload.wikimedia.org/wikipedia/en/thumb/6/67/Wiki-llama.jpg/1600px-Wiki-llama.jpg') top center no-repeat;
+  margin: 0 auto;
+}
+#slideshow-container:after {
+  padding-top: 75%;
+  /* this llama image is 800x600 so set the padding top % to match 600/800 = .75 */
+  display: block;
+  content: '';
+}
+.Slide-Top-Movie {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  color: black;
+  text-align: center;
+  margin-top: 5%;
 }
