@@ -76,7 +76,7 @@ function TopMoviesName() {
       for (const xy in Filename) {
         var Newitem = document.getElementById("Slide-Top-Movie");
         const UrlImage = 'https://telegra.ph/file/ef2b00a5fcac69ebfe43c.jpg';
-        Newitem.style.background = "url('https://telegra.ph/file/ef2b00a5fcac69ebfe43c.jpg') blue repeat-x center";
+        Newitem.style.background = "url('" + UrlImage + "') blue repeat-x center";
         /*
         var backgroundStle = "--bg-image: " + String(UrlImage) + ";";
         Newitem.setAttribute('style' , backgroundStle);*/
