@@ -90,9 +90,10 @@ function TopMoviesName() {
         Newitem.appendChild(ImageBox);
         var backgroundStle = "background-color: " + String(Filename[xy]) + ";"
         Newitem.setAttribute('style' , backgroundStle);
+        Newitem.setAttribute('background-size', 'cover');
         /*background-image: url('https://telegra.ph/file/4710c1f31d08bd315861c.jpg');
-  background-size: cover;
-  background-attachment: fixed;*/
+        : cover;
+        background-attachment: fixed;*/
         break;
         /*const Text = "<br>Movie Id :" + xy + "<br>Name :"+ Filename[xy];
         window.alert(xy);
