@@ -74,20 +74,24 @@ function TopMoviesName() {
     response.text().then(function(data) {
       const Filename = JSON.parse(data);
       for (const xy in Filename) {
+        var Newitem = document.getElementById("Slide-Top-Movie");
+        const UrlImage = 'https://telegra.ph/file/ef2b00a5fcac69ebfe43c.jpg';
+        var backgroundStle = "background-image: " + UrlImage + ";";
+        ImageBox.setAttribute('style' , backgroundStle);
         /*window.alert(Filename[String(xy)]);*/
-        const ImageBox = document.createElement('div');
-        ImageBox.className = "mySlides-fade";
+        /*const ImageBox = document.createElement('div');
+        ImageBox.className = "mySlides-fade";*/
         /*const ImageValue = document.createElement('img');
         ImageValue.setAttribute('src',String(Filename[String(xy)]));
         ImageValue.setAttribute('height', '30px');
         ImageValue.setAttribute('width', 'auto');
-        */const CaptionText = document.createElement('div');
+        const CaptionText = document.createElement('div');
         CaptionText.className = "Ctext";
         CaptionText.innerHTML = String(xy);
-        /*ImageBox.appendChild(ImageValue);*/
+        ImageBox.appendChild(ImageValue);
         ImageBox.appendChild(CaptionText);
         const UrlImage = 'https://telegra.ph/file/ef2b00a5fcac69ebfe43c.jpg';
-        var backgroundStle = "background-color: " + UrlImage + ";";
+        var backgroundStle = "background-image: " + UrlImage + ";";
         ImageBox.setAttribute('style' , backgroundStle);
         var Newitem = document.getElementById("Slide-Top-Movie");
         Newitem.appendChild(ImageBox);
