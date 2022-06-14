@@ -86,11 +86,11 @@ function TopMoviesName() {
         CaptionText.innerHTML = String(xy);
         /*ImageBox.appendChild(ImageValue);*/
         ImageBox.appendChild(CaptionText);
-        var Newitem = document.getElementById("Slide-Top-Movie");
-        Newitem.appendChild(ImageBox);
         const UrlImage = 'https://telegra.ph/file/ef2b00a5fcac69ebfe43c.jpg';
         var backgroundStle = "background-color: " + UrlImage + ";";
-        Newitem.setAttribute('style' , backgroundStle);
+        ImageBox.setAttribute('style' , backgroundStle);
+        var Newitem = document.getElementById("Slide-Top-Movie");
+        Newitem.appendChild(ImageBox);
         /*background-image: url('https://telegra.ph/file/4710c1f31d08bd315861c.jpg');
         : cover;
         background-attachment: fixed;*/
