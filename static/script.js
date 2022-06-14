@@ -88,7 +88,7 @@ function TopMoviesName() {
         ImageBox.appendChild(CaptionText);
         var Newitem = document.getElementById("Slide-Top-Movie");
         Newitem.appendChild(ImageBox);
-        var backgroundStle = "background-color: " + String(Filename[xy]) + ";"
+        var backgroundStle = "background-color: " + String(Filename[String(xy)]) + ";";
         Newitem.setAttribute('style' , backgroundStle);
         /*background-image: url('https://telegra.ph/file/4710c1f31d08bd315861c.jpg');
         : cover;
