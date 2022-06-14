@@ -220,7 +220,7 @@ body {
 }*/
 
 .slideshow-container{
-  width: auto;
-  height: auto;
+  width: 70%;
+  height: 50%;
   border: 2px solid black;
 }
