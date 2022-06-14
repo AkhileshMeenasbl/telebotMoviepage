@@ -75,8 +75,9 @@ function TopMoviesName() {
       const Filename = JSON.parse(data);
       for (const xy in Filename) {
         var Newitem = document.getElementById("Slide-Top-Movie");
-        document.getElementById("Slide-Top-Movie").style.background = "url('https://telegra.ph/file/ef2b00a5fcac69ebfe43c.jpg') blue repeat-x center";
-        /*const UrlImage = 'https://telegra.ph/file/ef2b00a5fcac69ebfe43c.jpg';
+        const UrlImage = 'https://telegra.ph/file/ef2b00a5fcac69ebfe43c.jpg';
+        Newitem.style.background = "url('https://telegra.ph/file/ef2b00a5fcac69ebfe43c.jpg') blue repeat-x center";
+        /*
         var backgroundStle = "--bg-image: " + String(UrlImage) + ";";
         Newitem.setAttribute('style' , backgroundStle);*/
         /*window.alert(Filename[String(xy)]);*/
