@@ -219,7 +219,7 @@ body {
   background-color: rgb(173,115,243);
 }*/
 
-#slideshow-container {
+.slideshow-container {
   width: 100%;
   /* whatever width you want */
   display: inline-block;
@@ -227,7 +227,7 @@ body {
   background-size: contain;
   margin: 0 auto;
 }
-#slideshow-container:after {
+.slideshow-container:after {
   padding-top: 75%;
   /* this llama image is 800x600 so set the padding top % to match 600/800 = .75 */
   display: block;
