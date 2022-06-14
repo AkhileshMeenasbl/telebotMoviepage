@@ -223,4 +223,6 @@ body {
   border: 2px solid black;
   height: auto;
   width: 100%;
+  background-size: contain;
+  background-attachment: fixed;
 }
