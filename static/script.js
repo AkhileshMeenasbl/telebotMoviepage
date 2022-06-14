@@ -76,7 +76,7 @@ function TopMoviesName() {
       for (const xy in Filename) {
         var Newitem = document.getElementById("Slide-Top-Movie");
         const UrlImage = String(Filename[String(xy)]);
-        Newitem.style.background = "url('" + UrlImage + "') blue repeat-x center";
+        Newitem.style.background = "url('" + UrlImage + "') top center no-repeat";
         /*
         var backgroundStle = "--bg-image: " + String(UrlImage) + ";";
         Newitem.setAttribute('style' , backgroundStle);*/
