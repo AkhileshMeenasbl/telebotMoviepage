@@ -74,7 +74,7 @@ function TopMoviesName() {
     response.text().then(function(data) {
       const Filename = JSON.parse(data);
       for (const xy in Filename) {
-        var Newitem = document.getElementsByClassName("Slide-Top-Movie");
+        var Newitem = document.getElementsByClassName("slideshow-container");
         const UrlImage = String(Filename[String(xy)]);
         Newitem.style.background = "url('" + UrlImage + "') top center no-repeat";
         /*
