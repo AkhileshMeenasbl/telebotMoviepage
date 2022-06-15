@@ -226,6 +226,7 @@ body {
   position: relative;
   background-size: contain;
   margin: 0 auto;
+  border: 2px solid black;
 }
 
 .slideshow-container:after {
