@@ -76,8 +76,8 @@ function TopMoviesName() {
       for (const xy in Filename) {
         var Newitem = document.getElementsByClassName("slideshow-container");
         const UrlImage = String(Filename[String(xy)]);
-        Newitem.style.background = "url('" + UrlImage + "') top center no-repeat";
         /*
+        Newitem.style.background = "url('" + UrlImage + "') top center no-repeat";
         var backgroundStle = "--bg-image: " + String(UrlImage) + ";";
         Newitem.setAttribute('style' , backgroundStle);*/
         /*window.alert(Filename[String(xy)]);*/
