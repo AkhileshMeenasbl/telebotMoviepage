@@ -74,8 +74,9 @@ function TopMoviesName() {
     response.text().then(function(data) {
       const Filename = JSON.parse(data);
       for (const xy in Filename) {
-        var Newitem = document.getElementsByClassName("slideshow-container");
+        var Newitem = document.getElementsByClassName("Slide-Top-Movie");
         const UrlImage = String(Filename[String(xy)]);
+        Newitem.setAttribute('src',String(Filename[String(xy)]));
         /*
         Newitem.style.background = "url('" + UrlImage + "') top center no-repeat";
         var backgroundStle = "--bg-image: " + String(UrlImage) + ";";
@@ -84,7 +85,6 @@ function TopMoviesName() {
         /*const ImageBox = document.createElement('div');
         ImageBox.className = "mySlides-fade";*/
         /*const ImageValue = document.createElement('img');
-        ImageValue.setAttribute('src',String(Filename[String(xy)]));
         ImageValue.setAttribute('height', '30px');
         ImageValue.setAttribute('width', 'auto');
         const CaptionText = document.createElement('div');
