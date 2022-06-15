@@ -222,17 +222,17 @@ body {
 .slideshow-container {
   width: 100%;
   /* whatever width you want */
-  display: inline-block;
+  /*display: inline-block;
   position: relative;
   background-size: contain;
   margin: 0 auto;
-  border: 2px solid black;
+  border: 2px solid black;*/
 }
-
+/*
 .slideshow-container:after {
   padding-top: 75%;
   /* this llama image is 800x600 so set the padding top % to match 600/800 = .75 */
-  display: block;
+  /*display: block;
   content: '';
 }
 .Slide-Top-Movie {
