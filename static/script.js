@@ -1,4 +1,9 @@
-
+//// MOVIE NEW POSTER CHANGING FUCNTION
+var FixedNumberValue = 5; 
+var TotlaPicsForNewmOvie = 5;
+var picToDisplay = 1;
+updateTotalPosters();
+//// MOVIE NEW POSTER CHANGING FUCNTION
 Telegram.WebApp.ready();
 TopMoviesName();
 
@@ -67,49 +72,54 @@ function TrendingFunc() {
     y.style.background = "rgb(95,95,95)";
   }
 }
-
+/// FUNCTION OF MOVIE CHANGING AT INTERVAL 
 function TopMoviesName() {
   fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/newmovie')
   .then(function(response) {
     response.text().then(function(data) {
-      const Filename = JSON.parse(data);
-      for (const xy in Filename) {
-        const ImageValue = document.createElement('img');
-        Newitem.setAttribute('src',String(Filename[String(xy)]));
-        var Newitem = document.getElementsByClassName("Slide-Top-Movie");
-        window.alert(Filename[String(xy)]);
-        /*
-        const UrlImage = String(Filename[String(xy)]);
-        Newitem.style.background = "url('" + UrlImage + "') top center no-repeat";
-        var backgroundStle = "--bg-image: " + String(UrlImage) + ";";
-        Newitem.setAttribute('style' , backgroundStle);*/
-        /*
-        /*const ImageBox = document.createElement('div');
-        ImageBox.className = "mySlides-fade";*/
-        /*
-        ImageValue.setAttribute('height', '30px');
-        ImageValue.setAttribute('width', 'auto');
-        const CaptionText = document.createElement('div');
-        CaptionText.className = "Ctext";
-        CaptionText.innerHTML = String(xy);
-        ImageBox.appendChild(ImageValue);
-        ImageBox.appendChild(CaptionText);
-        const UrlImage = 'https://telegra.ph/file/ef2b00a5fcac69ebfe43c.jpg';
-        var backgroundStle = "background-image: " + UrlImage + ";";
-        ImageBox.setAttribute('style' , backgroundStle);
-        var Newitem = document.getElementById("Slide-Top-Movie");
-        Newitem.appendChild(ImageBox);
-        /*background-image: url('https://telegra.ph/file/4710c1f31d08bd315861c.jpg');
-        : cover;
-        background-attachment: fixed;*/
-        break;
-        /*const Text = "<br>Movie Id :" + xy + "<br>Name :"+ Filename[xy];
-        window.alert(xy);
-        var Newitem = document.getElementById("NewRelease-Items");
-        Newitem.appendChild(el);
-        window.aler(xy);*/
+      const Result = JSON.parse(data);
+      for (const xy in Result) {
+        var TitleNameofMovie6 = Result[String(picToDisplay)];
+        for (const TitleNameofMovie in TitleNameofMovie6) {
+          var MoviePageUrl = String(TitleNameofMovie6[TitleNameofMovie]);
+          var TitleName = document.getElementById("TitleOfmovie");
+          TitleName.innerHTML = String(TitleNameofMovie);
+          var ImageValue = document.getElementById("ImagValues");
+          ImageValue.setAttribute('src',MoviePageUrl);
+        }
       }
     });
   });
 }
+
+function updateTotalPosters() {
+  fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/newmovie')
+  .then(function(response) {
+    response.text().then(function(data) {
+      const Result = JSON.parse(data);
+     shareInfoLen = Object.keys(Result).length;
+     window["FixedNumberValue"] = shareInfoLen;
+     window["TotlaPicsForNewmOvie"] = shareInfoLen;
+    });
+  });
+}
+
+function UpdateTimes() {
+  var FixedNumberValue1 = FixedNumberValue + 1;
+  window["FixedNumberValue"] = FixedNumberValue1;
+  }
+
+function GetPicNumber(){
+  var RestNum = FixedNumberValue%TotlaPicsForNewmOvie;
+  window["picToDisplay"] = Number(RestNum);
+}
+
+window.setInterval(function(){
+  ///updateTotalPosters();
+  UpdateTimes();
+  GetPicNumber();
+  TopMoviesName();
+  console.log("akhil")
+}, 3000);
+/// FUNCTION OF MOVIE CHANGING AT INTERVAL 
 
