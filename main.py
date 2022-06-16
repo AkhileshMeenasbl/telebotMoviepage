@@ -48,6 +48,7 @@ def newMovieData():
     Unique[Title] = PosterLink
     NewMovie[f"{XXX}"] = Unique
     XXX=+1
+    print(XXX)
   return NewMovie
 
 def UpdateData():
