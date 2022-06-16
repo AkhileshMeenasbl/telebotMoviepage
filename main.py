@@ -35,7 +35,9 @@ def newMovieData():
   soup = BeautifulSoup(response.text, 'html.parser')
   Data = soup.find_all("div", class_="bh-in-theatres-slider")
   soup2 = BeautifulSoup(f"{Data[0]}", 'html.parser')
+  XXX = 1
   for i in soup2.find_all("figure"):
+    Unique = {}
     soup3 = BeautifulSoup(f"{i}", 'html.parser')
     soup4 = soup3.find_all("img")
     output_json = html_to_json.convert(f"{soup4}")
@@ -43,7 +45,9 @@ def newMovieData():
     AllUrls = output_json["img"][0]["_attributes"]["srcset"]#[-1])
     ImageUrls = re.findall(r'(https?://[^\s]+)', AllUrls)
     PosterLink = ImageUrls[-1]
-    NewMovie[Title] = PosterLink
+    Unique[Title] = PosterLink
+    NewMovie[f"{XXX}"] = Unique
+    XXX=+1
   return NewMovie
 
 def UpdateData():
