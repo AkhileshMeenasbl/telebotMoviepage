@@ -47,7 +47,7 @@ def newMovieData():
     PosterLink = ImageUrls[-1]
     Unique[Title] = PosterLink
     NewMovie[f"{XXX}"] = Unique
-    XXX=+1
+    XXX+=1
     print(XXX)
   return NewMovie
 
