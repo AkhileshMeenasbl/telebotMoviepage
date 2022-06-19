@@ -83,9 +83,11 @@ function TopMoviesName() {
         for (const TitleNameofMovie in TitleNameofMovie6) {
           var MoviePageUrl = String(TitleNameofMovie6[TitleNameofMovie]);
           var TitleName = document.getElementById("TitleOfmovie");
-          TitleName.innerHTML = String(TitleNameofMovie);
           var ImageValue = document.getElementById("ImagValues");
+          var NewMovieSlidBackground = document.getElementById("slideshow-containerid");
+          NewMovieSlidBackground.style.backgroundImage = "url('" +  MoviePageUrl + "')";
           ImageValue.setAttribute('src',MoviePageUrl);
+          TitleName.innerHTML = String(TitleNameofMovie);
         }
       }
     });
@@ -115,11 +117,13 @@ function GetPicNumber(){
 }
 
 window.setInterval(function(){
-  ///updateTotalPosters();
   UpdateTimes();
   GetPicNumber();
   TopMoviesName();
-  console.log("akhil")
 }, 3000);
+
+window.setInterval(function(){
+  updateTotalPosters();
+}, 192929);
 /// FUNCTION OF MOVIE CHANGING AT INTERVAL 
 
