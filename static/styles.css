@@ -146,14 +146,20 @@ body {
   text-shadow: 0px 0px 2px #46f19b83;
 }
 
-.CHANNELJOINBUTTON{
-  text-align: center;
-  border: 0.1px solid #1ebbf1;
-  padding: 2px;
-  color: white;
-  background-color: #1ebbf1;
-  font-size: 10px;
-}
 .TelegramJoinButton,.TelegramJoinText{
   display: inline;
+}
+
+.CHANNELJOIN{
+  text-align: center;
+  background-color: #1ebbf1;
+  border: 0.1px solid #1ebbf1;
+}
+
+.buttontype {
+  width: 82%;
+  padding: 10px 32px;
+  color: white;
+  font-size: 16px;
+  display: inline-block;
 }
