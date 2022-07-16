@@ -1,4 +1,11 @@
 /*FONTS*/
+
+/*font-family: 'Fredoka One', cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+/*font-family: 'Roboto', sans-serif;*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+/*font-family: 'Pacifico', cursive;*/
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
     /*font-family: "Open Sans";*/
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
@@ -9,127 +16,106 @@
   font-family:'frozen'; 
   src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Ice%20kingdom%20-%20Bold%20-%20Por%20Kustren.woff');
 }
-  /*font-family: 'frozen', serif;*/
-/*BODY*/
+
+
 body {
   position: relative;
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  font-size: 16px;
-  background-image: url('https://telegra.ph/file/4710c1f31d08bd315861c.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-    }
-    
-/*HEADER*/
-.Logos,.Title{
-  display: inline-block;
-}
+  }
 
-.Highlight{
-  color: red;
+.ImageTab{
+  width: 100%;
+  overflow: hidden;
+  max-height: auto;
 }
-.Logos{
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-left:10px;
-  animation: LogoAnimate 2s linear infinite;
-}
-@keyframes LogoAnimate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-  0% {
-    box-shadow: 0px 0px 2px 2px red;
-  }
-  25% {
-    box-shadow: 0px 0px 2px 2px  green;
-  }
-  50% {
-    box-shadow: 0px 0px 2px 2px pink;
-  }
-  75% {
-    box-shadow: 0px 0px 2px 2px blue;
-  }
-}
-
-.Title{
-  margin-left: 15px;
-  position: fixed;
+.BOXTITLE{
+  font-weight: bold;
+  font-family: Arial;
+  font-size: 20px;
+  border: 2px solid #0a0a0a65;
+  background-color: rgba(10,10,10,0.584);
+  border-radius: 10px;
+  padding: 5px;
+  position: absolute;
   top: 10px;
-  font-size: 25px;
-  color: white;
-  font-family: 'Coiny', cursive;
+  left: 5px;
+  color: red;
+  box-sizing: content-box;
+  animation: animated-gradient 2s infinite alternate-reverse;
   /*
-  font-family: 'Fredoka One', cursive;
-  font-family: 'frozen', serif;
+  box-sizing: border-box;
+  width: 48%;
   */
 }
-.Title .Highlight{
-  text-shadow: 0 0 5px white;
-}
-.Title .AHighlight{
-  text-shadow: 0 0 5px white;
-}
-.Header{
-    border-bottom: 2px solid #4b5658;
-    background: rgba(255,255,255,0.091);
-    backdrop-filter: blur(20px);
-    padding: 10px 1px;
-}
 
-/*MENU LIST*/
-.NavMenu{
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  list-style: none;
-  border-bottom: 2px solid #787474;
-  /*background-color: rgb(206,248,230);*/
-  backdrop-filter: blur(20px);
-}
-.NavMenu li{
-  width: auto;
+@keyframes animated-gradient{
+  to{
+    color: white;
   }
-.NavMenu li a {
-  color: white;
-  text-shadow: 0px 0px 2px red;
-  font-size: 20px;
-  width: auto;
-  padding-left: 10px;
-  padding-right: 10px;
-  text-decoration: none;
 }
-.NavMenu li a:hover {
-  background-size: 100%;
-  color: white;
-  font-weight: bold;
-  text-shadow: 1px 1px 5px white;
-  background: rgb(169,75,230);
-  backdrop-filter: blur(10px);
-  border: 0.5px solid rgb(169,75,230);
-  border-radius: 5px;
-  animation: line 2s linear infinite;
-  }
-@keyframes line {
-  0% {
-    background-color : transparent;
-    backdrop-filter : blur(10px);
-    font-family: 'frozen', serif;
+@keyframes animated-gradient2{
+  to{
+    color: red;
   }
 }
 
+.WhiteFont{
+  color: white;
+  animation: animated-gradient2 2s infinite alternate-reverse;
+}
+.OTT-PLATFORMBOX{
+  width: auto;
+  text-align: center;
+}
+.OTT-PLATFORM{
+  width: 40px;
+  margin: 2px;
+  border-radius: 50px;
+  margin-top: 10px;
+}
+.OTT-PLATFORM:hover{
+  box-shadow: 0px 0px 10px 5px rgb(68,255,224);
+}
+
+.LineBreak{
+  box-shadow: 0 10px 10px -10px rgba(132,132,132,0.907) inset;
+}
+.ABOUT-Us{
+  border: 0.1px solid transparent;
+  background-image: url('https://telegra.ph/file/614f37b451cb0c04c30b7.jpg');
+  text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; 
+  /*
+  */
+}
+.ABOUSUboth{
+  background-color: rgba(225,225,225,0.426);
+  border: 1px solid rgba(225,225,225,0.533);
+  margin: 20px;
+  border-radius: 20px;
+}
+.HeadingAbout{
+  font-family: 'Fredoka One', cursive;
+  font-size: 15px;
+  margin: 2px;
+  text-decoration-line: underline;
+}
+.SummaryAbout{
+  font-family: 'Pacifico', cursive;
+  font-size: 10px;
+  color: rgb(61,61,61);
+  margin: 2px;
+  padding: 2px;
+}
 /*FOOTER*/
 .Footer {
   color: white;
   background-color: #656363;
   text-align: center;
-  width: 100%;
   font-size: 10px;
   padding: 10px;
   border-top: 2px solid #575757;
@@ -159,95 +145,15 @@ body {
   box-shadow: 0px 0px 2px #46f19b83;
   text-shadow: 0px 0px 2px #46f19b83;
 }
-/* HELP SEC */
-.BoxText{
-  background-color: transparent;
-  backdrop-filter: blur(10px);
-  border: 0.5px solid transparent;
-  box-shadow: 5px 5px 2px #bbbaf3;
-  border-top-right-radius: 20px;
-  border-bottom-left-radius: 20px;
-  margin: 12px;
-  width: 70%;
-  margin-left: 12%;
-  padding-left:20px;
-  padding-bottom:15px;
-}
-.BoxText-Heading{
-  color: Red;
-  text-shadow: 1px 1px 2px white;
-  font-size: 25px;
-  font-weight: bold;
-  font-style: italic;
-  position: relative;
-  left: 38%;
-}
-.BoxText-Text{
-  color: black;
-  text-shadow: 1px 1px 2px white;
-  font-size: 15px;
-  font-style: italic;
-  text-align: left;
-}
-.Hidden-Element{
-  display: none;
-  width: 100%;
-  border: 2px solid black;
-  background-color: #e7d9d9;
-}
 
-.Homesec{
+.CHANNELJOINBUTTON{
   text-align: center;
-}
-
-.BoxHomeButton{
-  border-top-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  margin: 7px 0.1px;
-  width: 70%;
+  border: 0.1px solid #1ebbf1;
+  padding: 2px;
   color: white;
-  text-shadow: 01px 01px 0px black;
-  font-weight: bold;
-  font-size: 20px;
-  text-transform: uppercase;
-  cursor: pointer;
-  background-color: transparent;
-  backdrop-filter: blur(10px);
-  box-shadow: 5px 5px 2px rgba(191,187,185,0.669);
+  background-color: #1ebbf1;
+  font-size: 10px;
 }
-/*.BoxHomeButton:hover {
-  background-color: rgb(173,115,243);
-}*/
-
-.slideshow-container {
-  width: 100%;
-  text-align: center;
-  border: 1px solid black;
-  width: 70%;
-  backdrop-filter: blur(10px);
-  border: 0.5px solid transparent;
-  padding-left:20px;
-  box-shadow: 5px 5px 2px #bbbaf3;
-  border-radius: 20px;
-  margin: 12px;
-  margin-left: 12%;
-  padding-bottom:15px;
-  background-image: url('https://telegra.ph/file/718013660fe12472d504c.jpg');
-}
-#ImagValues{
-  height: 250px;
-  width: auto;
-  margin-top: 20px;
-}
-
-#TitleOfmovie{
-  width: 196px;
-  margin-left: 29px;
-  color: black;
-  font-size: 20px;
-  font-weight: bold;
-  text-shadow: 1px 1px white;
-  background-color: #8b8b8baf;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 29px;
+.TelegramJoinButton,.TelegramJoinText{
+  display: inline;
 }
