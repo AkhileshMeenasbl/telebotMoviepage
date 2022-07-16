@@ -1,4 +1,4 @@
-BOT_TOKEN = "5357825309:AAHTV7AWFrkgpxdPg_AywKhJ4ckvzcLvuQI"
+BOT_TOKEN = "5357825309:AAGZaf1vmGgJvd8vJuIWR22KVGIFh5jokEk"
 APPNAME = "hdmovie5"
 WEBHOOK_HOST = f"https://{APPNAME}.herokuapp.com/"
 WEBHOOK_PATH = f"/{BOT_TOKEN}/"
