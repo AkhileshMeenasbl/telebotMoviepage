@@ -1,88 +1,69 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="MobileOptimized" content="176" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="robots" content="noindex,nofollow" />
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
-  <!-- For FONTS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- For FONTS -->
-  <!-- For Collapse -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <!-- For Collapse -->
-  <!--
-  <link rel="stylesheet" href="./style.css">
-  <script src="./main.js" defer></script>
-  -->
-  <link rel="stylesheet" href="/static/styles.css">
-  <script src="/static/script.js" defer></script>
-  <title>Web app</title>
-</head>
-<body>
-  <div class="Header">
-    <img class="Logos" alt="Avatar" src="https://telegra.ph/file/718013660fe12472d504c.jpg">
-    <div class="Title">
-      <span class="Highlight">HD MOVIES </span><span class="AHighlight">CINEMA</span>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="MobileOptimized" content="176" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="robots" content="noindex,nofollow" />
+    <!-- For SOCIAL MEADIA ICONs -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>TESTING WEB APP</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./main.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <div>
+        <img src='https://telegra.ph/file/d207997602f43aeec177c.jpg ' class="ImageTab">
+        <div class="BOXTITLE">
+          <span class="WhiteFont">HD</span>
+          <span >MOVIES</span>
+          <span class="WhiteFont">CINEMA</span>
+        </div>
+      </div>
     </div>
-  </div>
-  <nav class="NavMenu">
-      <li><a href="#Home">HOME</a></li>
-      <li><a href="#About">ABOUT</a></li>
-      <li><a href="#Help">HELP</a></li>
-      <li><a href="#Contact">CONTACT</a></li>
-  </nav>
-  <div class="slideshow-container" id="slideshow-containerid">
-    <img src="https://telegra.ph/file/718013660fe12472d504c.jpg" alt="" id="ImagValues"/>
-    <div id="TitleOfmovie">HD MOVIES CINEMA</div>
-  </div>
-  <div class="Homesec">
-    <button id="NewRelease" class="BoxHomeButton" onclick="NewReleaseFunc()">New Released 💡</button>
-    <div id="NewRelease-Items" class="Hidden-Element">
-      Result of new Released Movies
+    <div class="OTT-PLATFORMBOX">
+      <img class="OTT-PLATFORM" src="https://telegra.ph/file/cde76b34b82b62cb328cc.jpg"/>
+      <img class="OTT-PLATFORM" src="https://telegra.ph/file/6013d39304546a409003b.jpg"/>
+      <img class="OTT-PLATFORM" src="https://telegra.ph/file/ac821b225a1aaea22aa55.jpg "/>
+      <img class="OTT-PLATFORM" src="https://telegra.ph/file/69cf7c80760842c29696a.jpg"/>
+      <img class="OTT-PLATFORM" src="https://telegra.ph/file/ecdbc5bd0489846cd78bf.jpg "/>
+      <img class="OTT-PLATFORM" src="https://telegra.ph/file/e2e574d03fdbc38f373b9.jpg "/>
+      <img class="OTT-PLATFORM" src="https://telegra.ph/file/9d89765adebb523203754.jpg "/>
+      <img class="OTT-PLATFORM" src="https://telegra.ph/file/d1e68d98a8f9a0d6f9b7e.jpg "/>
     </div>
-    <button id="Trending" class="BoxHomeButton" onclick="TrendingFunc()">Trending 🎯</button>
-    <div id="Trending-Items" class="Hidden-Element">
-      Result of Trending Movies
+    <hr class="LineBreak"/>
+    <div>
+      NEW MOVIE SUFFLE
     </div>
-  </div>
-  <div class="About">
-    <div class="BoxText" id="About">
-      <span class="BoxText-Heading">About</span>
-      <br />
-      <span class="BoxText-Text">Welcome ❤️, To our Official Web app bot. Here you can search movie of any type, genre, Region.
-      </span>
+    <div class="ABOUT-Us">
+      <div class="ABOUSUboth">
+        <h1 class="HeadingAbout">ABOUT US</h1>
+        <p class="SummaryAbout">If you are wondering which Bollywood movies were released this week, browse this page for the latest updates from the world of Hindi cinema. That includes the latest Hindi movies available in theatres or on popular OTT platforms such as Netflix, Amazon Prime Video, and Disney+ Hotstar among others.</p>
+      </div>
     </div>
-  </div>
-  <div class="HelpSe">
-    <div class="BoxText" id="Help">
-      <span class="BoxText-Heading">Help</span>
-      <br />
-      <span class="BoxText-Text">● Type movie name to search <br />
-      ● You can search using name,IMDB id, Year ,Region Etc.
-      </span>
+    <div class="CHANNELJOINBUTTON">
+      <a href="t.me/channelanalyser">
+        <div id="TelegramJoinButton" class="fa fa-telegram"></div>
+        <div class="TelegramJoinText">JOIN TELEGRAM CHANNEL</div>
+      </a>
     </div>
-  </div>
-  <div class="Contacts">
-    <div id="SocialButton" class="fa fa-telegram"></div>
-    <div id="SocialButton" class="fa fa-instagram"></div>
-    <div id="SocialButton" class="fa fa-whatsapp"></div>
-    <div id="SocialButton" class="fa fa-reddit"></div>
-    <div id="SocialButton" class="fa fa-twitter"></div>
-    <div id="SocialButton" class="fa fa-facebook"></div>
-    <div id="SocialButton" class="fa fa-github"></div>
-  </div>
-  <div class="Footer">
-    <span class="CopyRght">
-      © COPYRIGHT 2022 | AKHIL MEENA | ALL RIGHTS RESERVED.
-    </span>
-  </div>
-</body>
+    <div>
+      <div class="Contacts">
+        <div id="SocialButton" class="fa fa-telegram"></div>
+        <div id="SocialButton" class="fa fa-instagram"></div>
+        <div id="SocialButton" class="fa fa-whatsapp"></div>
+        <div id="SocialButton" class="fa fa-reddit"></div>
+        <div id="SocialButton" class="fa fa-twitter"></div>
+        <div id="SocialButton" class="fa fa-facebook"></div>
+        <div id="SocialButton" class="fa fa-github"></div>
+      </div>
+      <div class="Footer">
+        <span class="CopyRght">
+          © COPYRIGHT 2022 | AKHIL MEENA | ALL RIGHTS RESERVED.
+        </span>
+      </div>
+    </div>
+  </body>
 </html>
