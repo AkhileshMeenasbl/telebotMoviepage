@@ -175,35 +175,35 @@ body {
 /* CHANNEL JOIN BUTTON */
 
 /*slidee show new movies*/
-.slideshow-container {
-  width: 100%;
-  text-align: center;
-  border: 1px solid black;
-  backdrop-filter: blur(10px);
-  border: 0.5px solid transparent;
-  padding-left:20px;
-  box-shadow: 5px 5px 2px #bbbaf3;
-  border-radius: 20px;
-  margin: 12px;
-  margin-left: 12%;
-  padding-bottom:15px;
-  background-image: url('https://telegra.ph/file/718013660fe12472d504c.jpg');
-}
-#ImagValues{
-  height: 250px;
-  width: auto;
-  margin-top: 20px;
+.slideshow-container{
+  justify-content: center;
+  display: flex;
+  background-image: url('https://telegra.ph/file/69cf7c80760842c29696a.jpg ');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #TitleOfmovie{
-  width: 196px;
-  margin-left: 29px;
-  color: black;
-  font-size: 20px;
+  font-family: 'Times New Roman';
+  text-align: center;
+  width: 160px;
+  border: 0.1px solid rgba(0,0,0,0.777);
+  background-color: rgba(92,92,92,0.773);
   font-weight: bold;
-  text-shadow: 1px 1px white;
-  background-color: #8b8b8baf;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 29px;
+  color: white;
+  text-shadow: 3px 3px 2px black;
+}
+
+#ImagValues{
+  max-width: 160px;
+  height: auto;
+}
+.NewMoviesReleaseSlide{
+  border: 1px solid black;
+  overflow: hidden;
+  padding: 5px;
+  margin: 5px;
+  background-color: #b7b7b7a1;
 }
 /*slidee show new movies*/
