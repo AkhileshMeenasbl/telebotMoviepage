@@ -3,7 +3,8 @@ var FixedNumberValue = 5;
 var TotlaPicsForNewmOvie = 5;
 var picToDisplay = 1;
 updateTotalPosters();
- 
+TopMoviesName();
+
 function TopMoviesName() {
   fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/newmovie')
   .then(function(response) {
