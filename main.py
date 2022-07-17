@@ -4,7 +4,9 @@ import config
 import logging
 import telebot
 import requests
+import html_to_json
 from telebot import TeleBot
+from bs4 import BeautifulSoup
 from utils import parse_init_data
 from flask import Flask, request, abort, send_file, jsonify
 from Module import Buttons,GeneralTxt
@@ -19,6 +21,35 @@ app = Flask(__name__, static_url_path='/static')
 @bot.message_handler(commands=['start'])
 def ak(m):
   bot.send_message(m.chat.id,text=GeneralTxt.Welcomemsg.format(m.chat.first_name),reply_markup=Buttons.HOME_PAGE)
+
+
+def newMovieData4slideposter():
+  NewMovie = {}
+  url = "https://www.bollywoodhungama.com/movies/"
+  response = requests.get(url)
+  akhil = response.text
+  soup = BeautifulSoup(response.text, 'html.parser')
+  Data = soup.find_all("div", class_="bh-in-theatres-slider")
+  soup2 = BeautifulSoup(f"{Data[0]}", 'html.parser')
+  XXX = 1
+  for i in soup2.find_all("figure"):
+    Unique = {}
+    soup3 = BeautifulSoup(f"{i}", 'html.parser')
+    soup4 = soup3.find_all("img")
+    output_json = html_to_json.convert(f"{soup4}")
+    Title = output_json["img"][0]["_attributes"]["title"]
+    AllUrls = output_json["img"][0]["_attributes"]["srcset"]#[-1])
+    ImageUrls = re.findall(r'(https?://[^\s]+)', AllUrls)
+    PosterLink = ImageUrls[-1]
+    Unique[Title] = PosterLink
+    NewMovie[f"{XXX}"] = Unique
+    XXX+=1
+    print(XXX)
+  return NewMovie
+
+@app.route("/newmovieslideposter",methods=['POST','GET'])
+def akhil():
+  return newMovieData4slideposter()
 
 @app.route('/home',methods=['POST','GET'])
 def index():
