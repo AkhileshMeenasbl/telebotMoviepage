@@ -6,7 +6,7 @@ updateTotalPosters();
 TopMoviesName();
 
 function TopMoviesName() {
-  fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/newmovie')
+  fetch('https://api.codetabs.com/v1/proxy?quest=https://hdmovie5.herokuapp.com/newmovieslideposter')
   .then(function(response) {
     response.text().then(function(data) {
       const Result = JSON.parse(data);
