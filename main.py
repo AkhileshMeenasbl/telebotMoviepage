@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 from utils import parse_init_data
 from flask import Flask, request, abort, send_file, jsonify
 from Module import Buttons,GeneralTxt
+from IMDB import Search_Movie
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -54,9 +55,7 @@ def akhil():
 @app.route("/searchmoviebyname",methods=['POST','GET'])
 def query_example():
   MovieName = request.args.get('movie_name')
-  print(MovieName)
-  return f"{MovieName}"
-  #return SearchMovieByName()
+  return Search_Movie.SearchMovieByName(f"{MovieName}")
 
 @app.route('/home',methods=['POST','GET'])
 def index():
