@@ -17,14 +17,15 @@
   src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/209981/Ice%20kingdom%20-%20Bold%20-%20Por%20Kustren.woff');
 }
 
-
+/* BODY PROPERTY */
 body {
   position: relative;
   min-height: 100vh;
   margin: 0;
   padding: 0;
   }
-
+/* BODY PROPERTY */
+/* HEADER OF WEBPAGE */
 .ImageTab{
   width: 100%;
   overflow: hidden;
@@ -65,6 +66,8 @@ body {
   color: white;
   animation: animated-gradient2 2s infinite alternate-reverse;
 }
+/* HEADER OF WEBPAGE */
+/* SPONCERING PLATFORMS */
 .OTT-PLATFORMBOX{
   width: auto;
   text-align: center;
@@ -78,10 +81,13 @@ body {
 .OTT-PLATFORM:hover{
   box-shadow: 0px 0px 10px 5px rgb(68,255,224);
 }
-
+/* SPONCERING PLATFORMS */
+/* LINE BREAK */
 .LineBreak{
   box-shadow: 0 10px 10px -10px rgba(132,132,132,0.907) inset;
 }
+/* LINE BREAK */
+/* ABOUT  WEBPAGE */
 .ABOUT-Us{
   border: 0.1px solid transparent;
   background-image: url('https://telegra.ph/file/614f37b451cb0c04c30b7.jpg');
@@ -111,7 +117,8 @@ body {
   margin: 2px;
   padding: 2px;
 }
-/*FOOTER*/
+/* ABOUT  WEBPAGE */
+/* FOOTER OF WEBPAGE */
 .Footer {
   color: white;
   background-color: #656363;
@@ -125,7 +132,8 @@ body {
   color: black;
   text-shadow: 1px 1px 0px black;
 }
-/* CONTACT */
+/* FOOTER OF WEBPAGE */
+/* CONTACT BUTTONS FOR SOCIAL MEDIA */
 .Contacts{
   background-color: #656363;
   text-align: center;
@@ -145,7 +153,8 @@ body {
   box-shadow: 0px 0px 2px #46f19b83;
   text-shadow: 0px 0px 2px #46f19b83;
 }
-
+/* CONTACT BUTTONS FOR SOCIAL MEDIA */
+/* CHANNEL JOIN BUTTON */
 .TelegramJoinButton,.TelegramJoinText{
   display: inline;
 }
@@ -163,14 +172,13 @@ body {
   font-size: 16px;
   display: inline-block;
 }
-
+/* CHANNEL JOIN BUTTON */
 
 /*slidee show new movies*/
 .slideshow-container {
   width: 100%;
   text-align: center;
   border: 1px solid black;
-  width: 70%;
   backdrop-filter: blur(10px);
   border: 0.5px solid transparent;
   padding-left:20px;
@@ -198,3 +206,4 @@ body {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 29px;
 }
+/*slidee show new movies*/
