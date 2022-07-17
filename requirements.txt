@@ -3,3 +3,4 @@ gunicorn==20.1.0
 pyTelegramBotAPI==4.5.1
 html-to-json==2.0.0
 beautifulsoup4==4.11.1
+IMDbPY==2021.4.18
