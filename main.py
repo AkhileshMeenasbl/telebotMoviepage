@@ -51,6 +51,13 @@ def newMovieData4slideposter():
 def akhil():
   return newMovieData4slideposter()
 
+@app.route("/searchmoviebyname",methods=['POST','GET'])
+def query_example():
+  MovieName = request.args.get('movie_name')
+  print(MovieName)
+  return f"{MovieName}"
+  #return SearchMovieByName()
+
 @app.route('/home',methods=['POST','GET'])
 def index():
   app.logger.info("akhil")
