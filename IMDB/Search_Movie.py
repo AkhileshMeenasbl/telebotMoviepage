@@ -46,13 +46,13 @@ def SearchMovieByName(MovieName):
   
 def MNameById(MovieId):
   Result = {}
-  series = ia.get_movie(int(movieid))
+  series = ia.get_movie(int(MovieId))
   Result["Title"] = str(series)
   return Result
   
 def MYearById(MovieId):
   Result = {}
-  series = ia.get_movie(int(movieid))
+  series = ia.get_movie(int(MovieId))
   year1=""
   try:
     year2 = series.data['year']
@@ -64,7 +64,7 @@ def MYearById(MovieId):
 
 def MPosterById(MovieId):
   Result = {}
-  series = ia.get_movie(int(movieid))
+  series = ia.get_movie(int(MovieId))
   cover2=""
   try:
     cover1 = series.data['cover url']
