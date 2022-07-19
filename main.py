@@ -68,7 +68,7 @@ def Get_MYear():
   return Search_Movie.MYearById(int(MovieId))
   
 @app.route("/SrchMPosterById",methods=['POST','GET'])
-def Get_MName():
+def Get_MPoster():
   MovieId = request.args.get('movie_id')
   return Search_Movie.MPosterById(int(MovieId))
 
