@@ -43,3 +43,40 @@ def SearchMovieByName(MovieName):
     intialResult["PosterUrl"] = str(cover2)
     Result[str(movieid)] = intialResult
   return Result
+  
+def MNameById(MovieId):
+  Result = {}
+  series = ia.get_movie(int(movieid))
+  Result["Title"] = str(series)
+  return Result
+  
+def MYearById(MovieId):
+  Result = {}
+  series = ia.get_movie(int(movieid))
+  year1=""
+  try:
+    year2 = series.data['year']
+    year1+= f"({year2})"
+  except:
+    year1+= "(N/A)"
+  Result["Year"] = str(year1)
+  return Result
+
+def MPosterById(MovieId):
+  Result = {}
+  series = ia.get_movie(int(movieid))
+  cover2=""
+  try:
+    cover1 = series.data['cover url']
+    cover = f"{cover1}"
+    left = '@'
+    right = '.jpg'
+    lnkt = cover[cover.index(left)+len(left):cover.index(right)]
+    old = "@" + f"{lnkt}" + ".jpg"
+    mlink = cover.replace(f"{old}", "@.jpg")
+    cover2+=f"{mlink}"
+  except:
+    mlink="https://static10.tgstat.ru/channels/_0/2f/2f9bfb5854cd89d5644304dd58c05298.jpg"
+    cover2+=f"{mlink}"
+  Result["PosterUrl"] = str(cover2)
+  return Result
