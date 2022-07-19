@@ -57,6 +57,21 @@ def query_example():
   MovieName = request.args.get('movie_name')
   return Search_Movie.SearchMovieByName(f"{MovieName}")
 
+@app.route("/SrchMNameById",methods=['POST','GET'])
+def Get_MName():
+  MovieId = request.args.get('movie_id')
+  return Search_Movie.MNameById(int(MovieId))
+
+@app.route("/SrchMYearById",methods=['POST','GET'])
+def Get_MYear():
+  MovieId = request.args.get('movie_id')
+  return Search_Movie.MYearById(int(MovieId))
+  
+@app.route("/SrchMPosterById",methods=['POST','GET'])
+def Get_MName():
+  MovieId = request.args.get('movie_id')
+  return Search_Movie.MPosterById(int(MovieId))
+
 @app.route('/home',methods=['POST','GET'])
 def index():
   app.logger.info("akhil")
