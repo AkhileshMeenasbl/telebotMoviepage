@@ -15,7 +15,7 @@ def SearchMovieByName(MovieName):
     endid = i.find("[http]")
     movieid = i[startid:endid]
     ttl = i.partition("title:_")[2]
-    Result[str(iid)] = str(ttl)
+    Result[str(movieid)] = str(ttl)
   return Result
   
 def MNameById(MovieId):
