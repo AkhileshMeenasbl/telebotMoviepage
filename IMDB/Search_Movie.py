@@ -19,13 +19,13 @@ def SearchMovieByName(MovieName):
   return Result
   
 def MNameById(MovieId):
-  Result = {}
+  #Result = {}
   series = ia.get_movie(int(MovieId))
-  Result["Title"] = str(series)
-  return Result
+  #Result["Title"] = str(series)
+  return series
   
 def MYearById(MovieId):
-  Result = {}
+  #Result = {}
   series = ia.get_movie(int(MovieId))
   year1=""
   try:
@@ -33,11 +33,11 @@ def MYearById(MovieId):
     year1+= f"({year2})"
   except:
     year1+= "(N/A)"
-  Result["Year"] = str(year1)
-  return Result
+  #Result["Year"] = str(year1)
+  return year1
 
 def MPosterById(MovieId):
-  Result = {}
+  #Result = {}
   series = ia.get_movie(int(MovieId))
   cover2=""
   try:
@@ -52,5 +52,5 @@ def MPosterById(MovieId):
   except:
     mlink="https://static10.tgstat.ru/channels/_0/2f/2f9bfb5854cd89d5644304dd58c05298.jpg"
     cover2+=f"{mlink}"
-  Result["PosterUrl"] = str(cover2)
-  return Result
+  #Result["PosterUrl"] = str(cover2)
+  return cover2
