@@ -17,6 +17,7 @@ def SearchMovieByName(MovieName):
     movieid = i[startid:endid]
     ttl = i.partition("title:_")[2]
     intialResult[str(movieid)] = str(ttl)
+    Result[movieid] = intialResult
   return Result
   
 def MNameById(MovieId):
