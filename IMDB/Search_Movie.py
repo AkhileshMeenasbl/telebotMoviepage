@@ -17,8 +17,8 @@ def SearchMovieByName(MovieName):
     movieid = i[startid:endid]
     ttl = i.partition("title:_")[2]
     intialResult[str(movieid)] = str(ttl)
-    Poster = MPosterById(movieid)
-    intialResult["Poster"] = str(Poster)
+    #Poster = MPosterById(movieid)
+    #intialResult["Poster"] = str(Poster)
     Result[movieid] = intialResult
   return Result
   
