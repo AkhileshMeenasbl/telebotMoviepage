@@ -17,13 +17,7 @@ def SearchMovieByName(MovieName):
     movieid = i[startid:endid]
     ttl = i.partition("title:_")[2]
     intialResult[str(movieid)] = str(ttl)
-    series = ia.get_movie(int(movieid))
-    year1=""
-    try:
-      year2 = series.data['year']
-      year1+= f"({year2})"
-    except:
-      year1+= "(N/A)"
+    year1 = "2022"
     intialResult["Year"] = str(year1)
     Result[movieid] = intialResult
   return Result
