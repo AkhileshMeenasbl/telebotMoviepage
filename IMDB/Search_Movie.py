@@ -17,7 +17,7 @@ def SearchMovieByName(MovieName):
     movieid = i[startid:endid]
     ttl = i.partition("title:_")[2]
     intialResult[str(movieid)] = str(ttl)
-    year1 = "2022"
+    Poster = await MPosterById()
     intialResult["Year"] = str(year1)
     Result[movieid] = intialResult
   return Result
@@ -40,7 +40,7 @@ def MYearById(MovieId):
   #Result["Year"] = str(year1)
   return year1
 
-def MPosterById(MovieId):
+async def MPosterById(MovieId):
   #Result = {}
   series = ia.get_movie(int(MovieId))
   cover2=""
