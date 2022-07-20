@@ -11,11 +11,12 @@ def SearchMovieByName(MovieName):
   srchrslt3 = str(srchrslt2)
   srchrslt4 = srchrslt3.split("_>, <")
   for i in srchrslt4:
+    intialResult = {}
     startid = i.find("Movie id:") + len("Movie id:")
     endid = i.find("[http]")
     movieid = i[startid:endid]
     ttl = i.partition("title:_")[2]
-    Result[str(movieid)] = str(ttl)
+    intialResult[str(movieid)] = str(ttl)
   return Result
   
 def MNameById(MovieId):
