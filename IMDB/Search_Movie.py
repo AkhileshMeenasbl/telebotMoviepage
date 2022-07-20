@@ -2,7 +2,7 @@ import imdb
 
 ia = imdb.IMDb()
 
-async def SearchMovieByName(MovieName):
+def SearchMovieByName(MovieName):
   Result = {}
   search = ia.search_movie(f"{MovieName}")
   srchrslt = f"{search}"
@@ -17,7 +17,7 @@ async def SearchMovieByName(MovieName):
     movieid = i[startid:endid]
     ttl = i.partition("title:_")[2]
     intialResult[str(movieid)] = str(ttl)
-    Poster = await MPosterById(movieid)
+    Poster = MPosterById(movieid)
     intialResult["Poster"] = str(Poster)
     Result[movieid] = intialResult
   return Result
@@ -40,7 +40,7 @@ def MYearById(MovieId):
   #Result["Year"] = str(year1)
   return year1
 
-async def MPosterById(MovieId):
+def MPosterById(MovieId):
   #Result = {}
   series = ia.get_movie(int(MovieId))
   cover2=""
