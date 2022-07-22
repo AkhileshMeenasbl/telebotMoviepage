@@ -8,6 +8,7 @@ def getdata(url):
   return r.text
   
 def GetAllMovieResult(MovieName):
+  print(MovieName)
   movietosearch = f"{MovieName}"
   IMDBURL = f"https://www.imdb.com/find?q={movietosearch}&s=tt&ref_=fn_tt"
   print(IMDBURL)
