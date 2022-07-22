@@ -8,8 +8,11 @@ def getdata(url):
   return r.text
   
 def GetAllMovieResult(MovieName):
+  movietosearch = f"{MovieName}"
+  IMDBURL = f"https://www.imdb.com/find?q={movietosearch}&s=tt&ref_=fn_tt"
+  print(IMDBURL)
   Result = {}
-  htmldata =  getdata(f"https://www.imdb.com/find?q={MovieName}&s=tt&ref_=fn_tt")
+  htmldata =  getdata(f"{IMDBURL}")
   soup = BeautifulSoup(htmldata, 'html.parser')
   table_dataResult = soup.find("table")#, attrs={"class":"details"})
   rows = table_dataResult.find_all('tr')
