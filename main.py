@@ -56,7 +56,7 @@ def akhil():
 def query_example():
   MovieName = request.args.get('movie_name')
   #return Search_Movie.ScrapeIMDB(f"{MovieName}")
-  return ScrapeIMDB.GetAllLatestJobs(f"{MovieName}")
+  return ScrapeIMDB.GetAllMovieResult(f"{MovieName}")
 
 @app.route("/SrchMNameById",methods=['POST','GET'])
 def Get_MName():
