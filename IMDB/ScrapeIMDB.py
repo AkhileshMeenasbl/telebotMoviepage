@@ -7,9 +7,9 @@ def getdata(url):
   r = requests.get(url)
   return r.text
   
-def GetAllLatestJobs():
+def GetAllMovieResult(MovieName):
   Result = {}
-  htmldata =  getdata("https://www.imdb.com/find?q=bahubali&s=tt&ref_=fn_tt")
+  htmldata =  getdata(f"https://www.imdb.com/find?q={MovieName}&s=tt&ref_=fn_tt")
   soup = BeautifulSoup(htmldata, 'html.parser')
   table_dataResult = soup.find("table")#, attrs={"class":"details"})
   rows = table_dataResult.find_all('tr')
