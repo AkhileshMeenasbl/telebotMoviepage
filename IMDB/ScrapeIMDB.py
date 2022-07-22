@@ -9,7 +9,7 @@ def getdata(url):
   
 def GetAllMovieResult(MovieName):
   print(MovieName)
-  movietosearch = f"{MovieName}"
+  movietosearch = f"{MovieName}".replace(" ","%20")
   IMDBURL = f"https://www.imdb.com/find?q={movietosearch}&s=tt&ref_=fn_tt"
   print(IMDBURL)
   Result = {}
