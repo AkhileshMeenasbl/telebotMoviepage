@@ -62,9 +62,11 @@ window.setInterval(function(){
 
 //// MOVIE SEARCH RESULT IMDB
 function SearchMovieByNames() {
+  const MovieName = document.getElementById('SearchBar');
   if(String(MovieName.value.replace(/^\s+|\s+$/g,"").length) == 0){
     window.alert("Please Input Movie Name");
   } else {
+    const MovieByNameURL = "https://hdmovie5.herokuapp.com/searchmoviebyname?movie_name=";
     var MovieName4search = String(MovieName.value);
     const url2fetch = `${MovieByNameURL}${MovieName4search}`;
     var Moviesearchurl = `https://api.codetabs.com/v1/proxy/?quest=${url2fetch}`;
