@@ -25,7 +25,12 @@ def GetAllMovieResult(MovieName):
     end = '.jpg'
     lnkt = Image_Link[Image_Link.find(start)+len(start):Image_Link.rfind(end)]
     #lnkt = Image_Link[Image_Link.index(left)+len(left):Image_Link.index(right)]
-    Poster = Image_Link.replace(f"{lnkt}", "")
+    Poster1 = Image_Link.replace(f"{lnkt}", "")
+    Poster = ""
+    if str(Poster1)[0] =="h":
+      Poster+=str(Poster1)
+    else:
+      Poster+="https://telegra.ph/file/69cf7c80760842c29696a.jpg "
     Titlerwsults = i.find_all('td')
     IMDBid = Titlerwsults[1].find_all('a')[0]['href'].replace("/title/","").replace("/","")
     IMDBname = Titlerwsults[1].text.strip()
