@@ -59,3 +59,53 @@ window.setInterval(function(){
 }, 192929);
  
 //// MOVIE NEW POSTER CHANGING FUCNTION
+
+//// MOVIE SEARCH RESULT IMDB
+function SearchMovieByNames() {
+  if(String(MovieName.value.replace(/^\s+|\s+$/g,"").length) == 0){
+    window.alert("Please Input Movie Name");
+  } else {
+    var MovieName4search = String(MovieName.value);
+    const url2fetch = `${MovieByNameURL}${MovieName4search}`;
+    var Moviesearchurl = `https://api.codetabs.com/v1/proxy/?quest=${url2fetch}`;
+    var SearchBoxAreaTitle = document.getElementById('SearchBoxTitle');
+    SearchBoxAreaTitle.innerHTML = `SEARCH RESULT`;
+    var SearchBoxAreaResult = document.getElementById('SearchBoxResult');
+    SearchBoxAreaResult.innerHTML = "";
+    fetch(Moviesearchurl)
+    .then(function(response) {
+      response.text().then(function(data) {
+        const Result = JSON.parse(data);
+        for (const xy in Result) {
+          var Movie_Id = xy;
+          var Movie_Name = Result[xy]["Name"];
+          var MoviePosterURL = Result[xy]["Poster"];
+          
+          //Function to make new another search result//
+          const SearchMovieResult = document.createElement("div");
+          SearchMovieResult.className = "SearchMovieResult";
+          
+          var SMoviePoster = document.createElement('img');
+          SMoviePoster.className = "SearchMoviePoster";
+          SMoviePoster.src = `${MoviePosterURL}`
+          
+          var FigCaption = document.createElement('FigCaption');
+          FigCaption.className = "FigCaption";
+          var smovietitlename = document.createElement('div');
+          smovietitlename.innerHTML = `${Movie_Name}`
+          var RequestMovieButton = document.createElement('button');
+          RequestMovieButton.className = "RequestMovieButton";
+          RequestMovieButton.innerHTML = "📂 REQUEST"
+          
+          FigCaption.appendChild(smovietitlename)
+          FigCaption.appendChild(RequestMovieButton)
+          SearchMovieResult.appendChild(SMoviePoster);
+          SearchMovieResult.appendChild(FigCaption);
+          SearchBoxAreaResult.appendChild(SearchMovieResult);
+        }
+      });
+    })
+    .catch(err => console.log(err));
+  }
+}
+//// MOVIE SEARCH RESULT IMDB
