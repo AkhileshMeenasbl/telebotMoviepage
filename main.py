@@ -58,20 +58,20 @@ def query_example():
   #return Search_Movie.ScrapeIMDB(f"{MovieName}")
   return ScrapeIMDB.GetAllMovieResult(f"{MovieName}")
 
-@app.route("/SrchMNameById",methods=['POST','GET'])
-def Get_MName():
-  MovieId = request.args.get('movie_id')
-  return Search_Movie.MNameById(int(MovieId))
+@app.route('/Submit-Request-for-Movie', methods=["POST"])
+def demo_form_response():
+  print(request.json)
+  raw_data = request.json
+  initData = raw_data["initData"]
+  Movie_id = raw_data["Movie_id"]
+  isValid = validate_web_app_data(TOKEN, initData)
+  if isValid:
+    print("Valid")
+  return redirect("/")
+ 
 
-@app.route("/SrchMYearById",methods=['POST','GET'])
-def Get_MYear():
-  MovieId = request.args.get('movie_id')
-  return Search_Movie.MYearById(int(MovieId))
-  
-@app.route("/SrchMPosterById",methods=['POST','GET'])
-def Get_MPoster():
-  MovieId = request.args.get('movie_id')
-  return Search_Movie.MPosterById(int(MovieId))
+
+
 
 @app.route('/home',methods=['POST','GET'])
 def index():
