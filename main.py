@@ -84,7 +84,7 @@ def demo_form_response():
     first_name = web_app_data["user"]["first_name"]
     username = web_app_data["user"]["username"]
     print(web_app_data)
-    bot.send_message(chat_id="-1001656239335",text=f"<b>New</b>\nmid:{Movie_id}\nuserid:{userid}\nname:{first_name}\nusername:{username}")
+    bot.send_message(chat_id="-1001656239335",text=f"<b>New</b>\nmid:{Movie_id}\nuserid:{userid}\nname:{first_name}\nusername: @{username}")
     query_id = web_app_data["query_id"]
     bot.answer_web_app_query(
       query_id,
