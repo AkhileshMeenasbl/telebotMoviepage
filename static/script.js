@@ -97,6 +97,8 @@ function SearchMovieByNames() {
           smovietitlename.innerHTML = `${Movie_Name}`
           var RequestMovieButton = document.createElement('button');
           RequestMovieButton.className = "RequestMovieButton";
+          RequestMovieButton.id = `${Movie_Id}`;
+          RequestMovieButton.addEventListener("click",SendRequstMovieData);
           RequestMovieButton.innerHTML = "📂 REQUEST"
           
           FigCaption.appendChild(smovietitlename)
@@ -111,3 +113,20 @@ function SearchMovieByNames() {
   }
 }
 //// MOVIE SEARCH RESULT IMDB
+//// MOVIE REUEST FUNCTION
+function SendRequstMovieData(evt){
+  const Data = evt.target;
+  var Movie_id = Data.id;
+  fetch('/Submit-Request-for-Movie', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      Movie_id : Movie_id,
+      initData : window.Telegram.WebApp.initData
+    })
+  });
+}
+//// MOVIE REUEST FUNCTION
