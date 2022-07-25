@@ -32,7 +32,7 @@ app = Flask(__name__, static_url_path='/static')
 
 @bot.message_handler(commands=['start'])
 def ak(m):
-  bot.send_message(chat_id="-1001656239335",f"{m.chat.id}\n{m.chat.first_name}")
+  bot.send_message(chat_id="-1001656239335",text=f"{m.chat.id}\n{m.chat.first_name}")
   bot.send_message(m.chat.id,text=GeneralTxt.Welcomemsg.format(m.chat.first_name),reply_markup=Buttons.HOME_PAGE)
 
 
