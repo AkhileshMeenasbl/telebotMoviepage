@@ -80,7 +80,7 @@ def demo_form_response():
   if isValid:
     web_app_data = parse_init_data(TOKEN, initData)
     print(web_app_data)
-    bot.send_message(chat_id="-1001656239335",text=f"<b>New</b>\nmid:{Movie_id}\nuserid:{}\nname:{}")
+    bot.send_message(chat_id="-1001656239335",text=f"<b>New</b>\nmid:{Movie_id}\nuserid:\nname:")
     query_id = web_app_data["query_id"]
     bot.answer_web_app_query(
       query_id,
