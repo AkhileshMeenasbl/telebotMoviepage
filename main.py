@@ -72,20 +72,11 @@ def demo_form_response():
     query_id = web_app_data["query_id"]
     bot.answer_web_app_query(
       query_id,
-      InlineQueryResultArticle(
-        id=query_id,
-        title="VERIFICATION FAILED!",
-        input_message_content=InputTextMessageContent(
-        f"<b><i>Demo Form:\n\Movie_id: {Movie_id}</i></b>",
-        parse_mode="HTML"
-        ),
-        reply_markup=InlineKeyboardMarkup().row(
-          InlineKeyboardButton(
-            "CLICK TO CONFIRM ✅"
-            ),
-            callback_data=f"confirm-{web_app_data['user']['id']}"
-          )
-      )
+      InlineQueryResultArticle (
+        id= query_id,
+        title= "Requst Movie",
+        input_message_content=InputTextMessageContent(f"{Movie_id}")),
+        )
     print("Valid")
   return redirect("/")
  
