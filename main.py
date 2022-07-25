@@ -68,7 +68,7 @@ def demo_form_response():
   Movie_id = raw_data["Movie_id"]
   isValid = validate_init_data(TOKEN, initData)
   if isValid:
-    web_app_data = parse_init_data(API_TOKEN, initData)
+    web_app_data = parse_init_data(TOKEN, initData)
     query_id = web_app_data["query_id"]
     bot.answer_web_app_query(
       query_id,
