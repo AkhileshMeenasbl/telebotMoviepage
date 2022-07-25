@@ -10,6 +10,8 @@ from bs4 import BeautifulSoup
 from utils import parse_init_data
 from flask import Flask, request, abort, send_file, jsonify
 from Module import Buttons,GeneralTxt
+from utils import parse_init_data
+from utils import validate_init_data
 from IMDB import Search_Movie,ScrapeIMDB
 
 logging.basicConfig(level=logging.DEBUG)
