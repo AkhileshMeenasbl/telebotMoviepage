@@ -84,9 +84,8 @@ def demo_form_response():
       InlineQueryResultArticle (
         id= query_id,
         title= "Requst Movie",
-        input_message_content=InputTextMessageContent(f"<b>Movie Request Completed ❤️</b>"),parse_mode="HTML"),
+        input_message_content=InputTextMessageContent(f"<b>Movie Request Completed ❤️</b>",parse_mode="HTML")),
         )
-    print("Valid")
   return redirect("/")
  
 
